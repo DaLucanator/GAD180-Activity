@@ -2,7 +2,7 @@
  using UnityEngine;
  using System.Collections;
  
- public class Respawn : MonoBehaviour {
+ public class Respawn (Platformer) : MonoBehaviour {
  
      public Vector2 SpawnPoint;
      
