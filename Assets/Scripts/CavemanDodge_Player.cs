@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class CaveManDodge_Player : MonoBehaviour
 {
 
     public float speed = 15f;

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Player player = collision.collider.GetComponent<Player>();
+        CaveManSling_Player player = collision.collider.GetComponent<CaveManSling_Player>();
         if (player != null)
         {
             Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
