@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ugg : MonoBehaviour
+public class Ugg (Platformer) : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpHeight = 5f;
