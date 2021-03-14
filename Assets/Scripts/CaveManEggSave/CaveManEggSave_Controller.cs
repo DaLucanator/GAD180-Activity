@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CaveManEggSave_Controller : MonoBehaviour
 {
@@ -23,24 +24,11 @@ public class CaveManEggSave_Controller : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Dino")
+        if (eggHealth <1)
         {
-            Debug.Log("Collision with Dino");
-            Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
         }
-        /*
-        else if (collision.gameObject.tag == "Egg")
-        {
-            Debug.Log("Collision with Egg");
-            Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-            eggHealth -= 10f;
-        }
-        */
     }
 }
