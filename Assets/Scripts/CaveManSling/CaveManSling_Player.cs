@@ -5,25 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class CaveManSling_Player : MonoBehaviour
 {
-    //Start Variables
+    [SerializeField] private float _launchPower = 300;
 
     private Vector3 _startPos;
     private bool _headLaunched;
     private float _idle;
 
-    [SerializeField] private float _launchPower = 300;
-
-    //End Variables
-
     void Awake()
     {
-        //get start pos
         _startPos = transform.position;
     }
 
     private void Update()
     {
-        //Set Line to go from head to start position
         GetComponent<LineRenderer>().SetPosition(0, transform.position);
         GetComponent<LineRenderer>().SetPosition(1, _startPos);
 
@@ -32,33 +26,26 @@ public class CaveManSling_Player : MonoBehaviour
             _idle += Time.deltaTime;
         }
 
-        //reset bird position if flys too far.
         if(transform.position.y > 10 ||
             transform.position.y < -10 ||
             transform.position.x > 10 ||
             transform.position.x < -10 ||
             _idle > 2)
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
+            ResetSlingGame();
         }
     }
 
     private void OnMouseDown()
     {
-        //mouse click and hold highlights head in red
         GetComponent<SpriteRenderer>().color = Color.red;
         GetComponent<LineRenderer>().enabled = true;
     }
 
     private void OnMouseUp()
     {
-        //mouse release returns head colour back to default, white.
         GetComponent<SpriteRenderer>().color = Color.white;
 
-
-        //Add force to fire head. Direction is from current mouse pos to star pos.
-        //Force Multiplier variable _launchPower, gravity scale 1.
         Vector2 directionToInitialPosition = _startPos - transform.position;
         GetComponent<Rigidbody2D>().AddForce(directionToInitialPosition * _launchPower);
         GetComponent<Rigidbody2D>().gravityScale = 1;
@@ -73,6 +60,12 @@ public class CaveManSling_Player : MonoBehaviour
         transform.position = new Vector3(newPosition.x, newPosition.y);
     }
 
-
-
+    private void ResetSlingGame()
+    {
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+        transform.position = _startPos;
+        _headLaunched = false;
+        _idle = 0f;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
 }

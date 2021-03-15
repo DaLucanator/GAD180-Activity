@@ -20,6 +20,7 @@ public class DinoWalker : MonoBehaviour
             Destroy(gameObject);
             GameObject newParticle = (GameObject)Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
             Destroy(newParticle,3);
+            CaveManEggSave_Controller.dinosKilled++;
         }
 
         if(collision.gameObject.tag == "Egg")
