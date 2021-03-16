@@ -3,13 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
   - Egg
   - Dino
-  - HideOnPause
   - GameOver
+  - HideOnPause
   - GameWin
   - NextLevelBtn
+  - Branch
+  - Environment
+  - Fail
+  - Pass
   layers:
   - Default
   - TransparentFX
@@ -44,6 +47,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2838517483
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
