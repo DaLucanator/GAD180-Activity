@@ -10,6 +10,7 @@ public class CaveManSling_Player : MonoBehaviour
     private Vector3 _startPos;
     private bool _headLaunched;
     private float _idle;
+    private float _lives;
 
     void Awake()
     {
@@ -32,8 +33,16 @@ public class CaveManSling_Player : MonoBehaviour
             transform.position.x < -10 ||
             _idle > 2)
         {
-            ResetSlingGame();
+            //ResetSlingGame();
+            SceneManager.LoadScene(3);
+            /*
+            _lives++;
+                if(_lives == 3)
+        {
+                CaveManSling_Player.GameOver();
         }
+            */
+      }
     }
 
     private void OnMouseDown()
@@ -60,6 +69,7 @@ public class CaveManSling_Player : MonoBehaviour
         transform.position = new Vector3(newPosition.x, newPosition.y);
     }
 
+    //No Active.
     private void ResetSlingGame()
     {
         GetComponent<Rigidbody2D>().gravityScale = 0;
