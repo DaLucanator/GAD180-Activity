@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CaveManDodge.unity
     guid: 3a852dc8028d9cf45afd1f4129649f94
   - enabled: 1
+    path: Assets/Scenes/Platformer.unity
+    guid: 437545d724e8ec9428cae2077ea5f191
+  - enabled: 1
+    path: Assets/Scenes/BreakfastUIVersion.unity
+    guid: f84e785ae22a0364884db330a62228f9
+  - enabled: 0
     path: Assets/Scenes/CaveManSling.unity
     guid: e6208a8ba959bb34cad492d243b5e3a6
   m_configObjects: {}

@@ -1,18 +1,30 @@
 
  using UnityEngine;
  using System.Collections;
- 
- public class RespawnPlatformer : MonoBehaviour 
+ using UnityEngine.UI;
+
+public class RespawnPlatformer : MonoBehaviour 
 
 {
- 
-     public Vector2 SpawnPoint;
-     
-     void OnTriggerEnter (Collider col)
+    public Text GameOverText;
+    public Button NextLevelBtn;
+    public Vector2 SpawnPoint;
+
+
+    void OnTriggerEnter2D (Collider2D collision)
      {
-         if     (col.tag == "Player")
+         if     (collision.tag == "Player")
          {
-             col.transform.position = SpawnPoint;
+            //col.transform.position = SpawnPoint;
+            GameOver();
          }
      }
- }
+
+    public void GameOver()
+    {
+        GameOverText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+        Time.timeScale = 0;
+    }
+}

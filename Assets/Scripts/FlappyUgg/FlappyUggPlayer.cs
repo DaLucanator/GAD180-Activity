@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlappyUggPlayer : MonoBehaviour
 {
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float jumpForce;
     public float moveSpeed;
     Vector2 moveForward;

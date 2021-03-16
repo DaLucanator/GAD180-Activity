@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CaveManSling_Player : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CaveManSling_Player : MonoBehaviour
     private bool _headLaunched;
     private float _idle;
     private float _lives;
+    public Button NextLevelBtn;
+    public Text GameOverText;
 
     void Awake()
     {
@@ -34,7 +37,7 @@ public class CaveManSling_Player : MonoBehaviour
             _idle > 2)
         {
             //ResetSlingGame();
-            SceneManager.LoadScene(3);
+            //SceneManager.LoadScene(1);
             /*
             _lives++;
                 if(_lives == 3)
@@ -42,6 +45,7 @@ public class CaveManSling_Player : MonoBehaviour
                 CaveManSling_Player.GameOver();
         }
             */
+            GameOver();
       }
     }
 
@@ -69,7 +73,8 @@ public class CaveManSling_Player : MonoBehaviour
         transform.position = new Vector3(newPosition.x, newPosition.y);
     }
 
-    //No Active.
+    //Not Active.
+    /*
     private void ResetSlingGame()
     {
         GetComponent<Rigidbody2D>().gravityScale = 0;
@@ -77,5 +82,17 @@ public class CaveManSling_Player : MonoBehaviour
         _headLaunched = false;
         _idle = 0f;
         transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+    */
+    public void GameOver()
+    {
+        GameOverText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void NextLevel()
+    {
+        CaveLife_LevelController.OnLevelComplete(1);
+        Time.timeScale = 1;
     }
 }
