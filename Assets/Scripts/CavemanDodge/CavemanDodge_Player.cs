@@ -30,7 +30,7 @@ public class CaveManDodge_Player : MonoBehaviour
 
     private void OnCollisionEnter2D()
     {
-        FindObjectOfType<GameManager>().EndGame();
+        FindObjectOfType<CaveManDodgeGameManager>().EndGame();
     }
 
 }

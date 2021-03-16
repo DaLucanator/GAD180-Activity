@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Egg
+  - Dino
+  - HideOnPause
+  - GameOver
+  - GameWin
+  - NextLevelBtn
   layers:
   - Default
   - TransparentFX

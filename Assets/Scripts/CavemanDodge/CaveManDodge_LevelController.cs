@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelController : MonoBehaviour
+public class CaveManDodge_LevelController : MonoBehaviour
 {
     private Enemy[] _enemies;
 
