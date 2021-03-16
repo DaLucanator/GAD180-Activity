@@ -5,7 +5,6 @@ using UnityEngine;
 public class DinoWalker : MonoBehaviour
 {
     [SerializeField] private GameObject _cloudParticlePrefab;
-    public float eggHealth = 100f;
     public bool explosion = false;
 
     public Vector2 eggPosition = new Vector2(0, 0);
@@ -28,8 +27,7 @@ public class DinoWalker : MonoBehaviour
             Destroy(gameObject);
             GameObject newParticle = (GameObject)Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
             Destroy(newParticle, 3);
-            eggHealth -= 10;
+            CaveManEggSave_Controller.eggHealth -= 10;
         }
     }
-
 }

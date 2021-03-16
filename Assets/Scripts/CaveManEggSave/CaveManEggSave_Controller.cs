@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class CaveManEggSave_Controller : MonoBehaviour
 {
     [SerializeField] private GameObject _cloudParticlePrefab;
+    [SerializeField] public static float eggHealth = 100f;
 
-    public float eggHealth = 100f;
     public float moveSpeed = 5f;
     public static float dinosKilled = 0f;
 
@@ -32,10 +32,7 @@ public class CaveManEggSave_Controller : MonoBehaviour
 
         if (eggHealth <1)
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
             GameOver();
-            dinosKilled = 0f;
         }
         if (dinosKilled > 10)
         {
