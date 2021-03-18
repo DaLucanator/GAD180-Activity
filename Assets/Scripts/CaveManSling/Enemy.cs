@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour
         {
             return;
         }
-        //hit on head less than y 0.5 on his head, kill it
         if (collision.contacts[0].normal.y < -0.5)
         {
             Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);

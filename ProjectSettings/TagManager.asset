@@ -8,6 +8,15 @@ TagManager:
   - GameWin
   - Egg
   - Dino
+<<<<<<< HEAD
+=======
+  - HideOnPause
+  - GameOver
+  - GameWin
+  - NextLevelBtn
+  - ground
+  - Lives
+>>>>>>> MicroGames-Ali
   layers:
   - Default
   - TransparentFX

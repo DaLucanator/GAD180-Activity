@@ -202,8 +202,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106771149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -9.6707, y: 3.0448, z: -0.21813}
   m_LocalScale: {x: 0.17784345, y: 0.16805476, z: 0.90172}
+=======
+  m_LocalPosition: {x: -6.0223, y: 2.6792, z: -0.97651}
+  m_LocalScale: {x: 0.11044707, y: 0.10436795, z: 0.56}
+>>>>>>> MicroGames-Ali
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1931,7 +1936,94 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!4 &1681145951
+=======
+--- !u!4 &425203616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425203613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.5137, y: 2.1808, z: -2.5127}
+  m_LocalScale: {x: 1.6800001, y: 0.56, z: 0.56}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &519420028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 519420032}
+  - component: {fileID: 519420031}
+  - component: {fileID: 519420029}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &519420029
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+--- !u!20 &519420031
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 3.9774432
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 0
+  m_HDR: 1
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 0
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &519420032
+>>>>>>> MicroGames-Ali
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1939,8 +2031,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681145948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 6.6414, y: 1.0611, z: -2.6917}
   m_LocalScale: {x: 1.35258, y: 0.270516, z: 0.90172}
+=======
+  m_LocalPosition: {x: -0.06, y: 2.39, z: -10}
+  m_LocalScale: {x: 1, y: 2.1375, z: 1}
+>>>>>>> MicroGames-Ali
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -2013,8 +2110,13 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705920615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+=======
+  m_LocalPosition: {x: -0.043367, y: -0.014402, z: -3.5182}
+  m_LocalScale: {x: 0.56, y: 0.56, z: 0.56}
+>>>>>>> MicroGames-Ali
   m_Children: []
   m_Father: {fileID: 327023828}
   m_RootOrder: 0
@@ -2101,8 +2203,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710732030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -3.557, y: -0.93173, z: -0.21813}
   m_LocalScale: {x: 2.70516, y: 0.45086, z: 0.90172}
+=======
+  m_LocalPosition: {x: 0.70892, y: 2.1472, z: -2.5127}
+  m_LocalScale: {x: 1.6800001, y: 0.56, z: 0.56}
+>>>>>>> MicroGames-Ali
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -2210,8 +2317,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718424270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -7.0827, y: 1.3676, z: -2.6917}
   m_LocalScale: {x: 1.80344, y: 0.90172, z: 0.90172}
+=======
+  m_LocalPosition: {x: -4.4151, y: 1.6376, z: -2.5127}
+  m_LocalScale: {x: 1.12, y: 0.56, z: 0.56}
+>>>>>>> MicroGames-Ali
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2292,8 +2404,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743991324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -0.13952, y: 2.08, z: -0.21813}
   m_LocalScale: {x: 0.94653547, y: 0.9311161, z: 0.90172}
+=======
+  m_LocalPosition: {x: -0.10308, y: 2.08, z: -0.97651}
+  m_LocalScale: {x: 0.58783203, y: 0.578256, z: 0.56}
+>>>>>>> MicroGames-Ali
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2473,8 +2590,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854249265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -9.6887, y: 2.071, z: -2.6917}
   m_LocalScale: {x: 2.70516, y: 0.90172, z: 0.90172}
+=======
+  m_LocalPosition: {x: -6.0335, y: 2.0744, z: -2.5127}
+  m_LocalScale: {x: 1.6800001, y: 0.56, z: 0.56}
+>>>>>>> MicroGames-Ali
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
