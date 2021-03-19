@@ -8,6 +8,12 @@ TagManager:
   - GameWin
   - Egg
   - Dino
+  - HideOnPause
+  - GameOver
+  - GameWin
+  - NextLevelBtn
+  - ground
+  - Lives
   layers:
   - Default
   - TransparentFX

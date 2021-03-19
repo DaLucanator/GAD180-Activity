@@ -802,7 +802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fb9f92768df3e4fbe6166024c11307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverText: {fileID: 1148444062}
   GameWinText: {fileID: 798878099}
   NextLevelBtn: {fileID: 1921973251}
 --- !u!4 &699151929
@@ -834,7 +833,7 @@ GameObject:
   - component: {fileID: 774310933}
   - component: {fileID: 774310934}
   m_Layer: 0
-  m_Name: CavemanHead
+  m_Name: CaveManHead
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1096,8 +1095,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _launchPower: 300
-  NextLevelBtn: {fileID: 1921973251}
+  currentLives: 3
   GameOverText: {fileID: 1148444062}
+  NextLevelBtn: {fileID: 1921973251}
 --- !u!120 &774310934
 LineRenderer:
   m_ObjectHideFlags: 0
