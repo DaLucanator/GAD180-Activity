@@ -16,8 +16,6 @@ public class CaveManSling_Player : MonoBehaviour
     private bool _headLaunched;
     private float _idle;
     private float _lives;
-    public Button NextLevelBtn;
-    public Text GameOverText;
 
     void Awake()
     {
@@ -81,7 +79,7 @@ public class CaveManSling_Player : MonoBehaviour
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(newPosition.x, newPosition.y);
     }
-
+    /*
     public void GameOver()
     {
         GameOverText.gameObject.SetActive(true);
