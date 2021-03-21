@@ -3026,8 +3026,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CavemanDetect, Assembly-CSharp
+      - m_Target: {fileID: 157763168}
+        m_TargetAssemblyTypeName: RockTrigger, Assembly-CSharp
         m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
