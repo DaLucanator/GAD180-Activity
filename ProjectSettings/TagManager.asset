@@ -12,6 +12,9 @@ TagManager:
   - Lives
   - GameOver
   - GameWin
+  - Branch
+  - Environment
+  - Rubble
   layers:
   - Default
   - TransparentFX
