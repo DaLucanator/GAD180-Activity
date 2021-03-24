@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DinoWalker : MonoBehaviour
 {
     [SerializeField] private GameObject _cloudParticlePrefab;
+    [SerializeField] private GameObject _cloudParticlePrefab2;
     public bool explosion = false;
 
     public Vector2 eggPosition = new Vector2(0, 0);
@@ -25,7 +27,7 @@ public class DinoWalker : MonoBehaviour
         if(collision.gameObject.tag == "Egg")
         {
             Destroy(gameObject);
-            GameObject newParticle = (GameObject)Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
+            GameObject newParticle = (GameObject)Instantiate(_cloudParticlePrefab2, transform.position, Quaternion.identity);
             Destroy(newParticle, 3);
             CaveManEggSave_Controller.eggHealth -= 10;
         }

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class CaveManEggSave_Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject _cloudParticlePrefab;
     [SerializeField] public static float eggHealth = 100f;
 
     public float moveSpeed = 5f;
@@ -16,9 +15,18 @@ public class CaveManEggSave_Controller : MonoBehaviour
     public Text GameWinText;
     public Button NextLevelBtn;
 
+    public Text DinosStopped;
+    public Text EggHealth;
+
     public Rigidbody2D rb;
 
     Vector2 movement;
+
+    private void Start()
+    {
+        DinosStopped.text = "" + 0f;
+        EggHealth.text = "" + 100f;
+    }
 
     void Update()
     {
@@ -30,6 +38,9 @@ public class CaveManEggSave_Controller : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
+        EggHealth.text = "" + eggHealth;
+        DinosStopped.text = "" + dinosKilled;
+
         if (eggHealth <1)
         {
             GameOver();
@@ -40,6 +51,7 @@ public class CaveManEggSave_Controller : MonoBehaviour
             GameWin();
             dinosKilled = 0f;
         }
+
     }
     public void GameOver()
     {
