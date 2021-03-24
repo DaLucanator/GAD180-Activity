@@ -12,6 +12,7 @@ TagManager:
   - NextLevelBtn
   - ground
   - Lives
+  - Track
   layers:
   - Default
   - TransparentFX
