@@ -65,12 +65,4 @@ public class CI_PlayerControls : MonoBehaviour
 
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Rubble" && Input.GetKeyDown(KeyCode.E))
-        {
-            RubbleMover rubbleMover = other.gameObject.GetComponent<RubbleMover>();
-            rubbleMover.Move();
-        }
-    }
 }
