@@ -7,9 +7,11 @@ public class DinoWalker : MonoBehaviour
 {
     [SerializeField] private GameObject _cloudParticlePrefab;
     [SerializeField] private GameObject _cloudParticlePrefab2;
-    public bool explosion = false;
 
-    public Vector2 eggPosition = new Vector2(0, 0);
+    Vector2 eggPosition = new Vector2(0, 0);
+
+    public bool explosion = false;
+    
     void Update()
     {
         transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), eggPosition, 3 * Time.deltaTime);

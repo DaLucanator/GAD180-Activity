@@ -7,17 +7,15 @@ using UnityEngine.UI;
 public class CaveManEggSave_Controller : MonoBehaviour
 {
     [SerializeField] public static float eggHealth = 100f;
-
-    public float moveSpeed = 5f;
     public static float dinosKilled = 0f;
 
+    public float moveSpeed = 5f;
+    
     public Text GameOverText;
     public Text GameWinText;
     public Button NextLevelBtn;
-
     public Text DinosStopped;
     public Text EggHealth;
-
     public Rigidbody2D rb;
 
     Vector2 movement;
@@ -45,11 +43,10 @@ public class CaveManEggSave_Controller : MonoBehaviour
         {
             GameOver();
         }
-        if (dinosKilled > 10)
+        if (dinosKilled >= 10f)
         {
             Debug.Log("Game Won!");
             GameWin();
-            dinosKilled = 0f;
         }
 
     }
@@ -67,7 +64,7 @@ public class CaveManEggSave_Controller : MonoBehaviour
     }
     public void NextLevel()
     {
-        CaveLife_LevelController.OnLevelComplete(1);
         Time.timeScale = 1;
+        CaveLife_LevelController.OnLevelComplete(1);
     }
 }

@@ -4,38 +4,42 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CaveManSling_Controller : MonoBehaviour
+public class CaveManAbduct_GameController : MonoBehaviour
 {
-    //private static int _nextLevelIndex = 1;
-    
+
+    public Text GameOverText;
     public Text GameWinText;
     public Button NextLevelBtn;
-    private Enemy[] _enemies;
+    public Text ScoreCount;
 
-    private void OnEnable()
+    public float currentScore = 0f;
+    private void Start()
     {
-        _enemies = FindObjectsOfType<Enemy>();
+        ScoreCount.text = "" + 0f;
     }
-
     void Update()
     {
-        foreach (Enemy enemy in _enemies)
+        currentScore = CaveManAbduct_Walker.abductionCount;
+        ScoreCount.text = "" + currentScore;
+
+        if (currentScore >= 5)
         {
-            if (enemy != null)
-            {
-                return;
-            }
             GameWin();
         }
     }
-    
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        GameOverText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+    }
     public void GameWin()
     {
+        Time.timeScale = 0;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        Time.timeScale = 0;
     }
-
     public void NextLevel()
     {
         Time.timeScale = 1;

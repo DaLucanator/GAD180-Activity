@@ -11,8 +11,8 @@ public class CaveManSling_Player : MonoBehaviour
 
     public Text GameOverText;
     public Button NextLevelBtn;
-
     private Vector3 _startPos;
+
     private bool _headLaunched;
     private float _idle;
     private float _lives;
@@ -38,8 +38,6 @@ public class CaveManSling_Player : MonoBehaviour
             transform.position.x < -10 ||
             _idle > 2)
         {
-
-
             currentLives -= 1;
 
             if (currentLives <= 0)
@@ -84,6 +82,5 @@ public class CaveManSling_Player : MonoBehaviour
     {
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        Time.timeScale = 0;
     }
 }

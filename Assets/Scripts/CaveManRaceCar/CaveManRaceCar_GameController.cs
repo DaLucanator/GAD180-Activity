@@ -15,6 +15,7 @@ public class CaveManRaceCar_GameController : MonoBehaviour
     public GameObject raceCar;
 
     public Vector2 forwardSpeed;
+
     public bool onTrack = false;
     public float scoreValue = 0f;
     private float scoreTimer = 0f;
@@ -73,17 +74,14 @@ public class CaveManRaceCar_GameController : MonoBehaviour
     {
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        Time.timeScale = 0;
     }
     public void GameWin()
     {
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        Time.timeScale = 0;
     }
     public void NextLevel()
     {
         CaveLife_LevelController.OnLevelComplete(1);
-        Time.timeScale = 1;
     }
 }

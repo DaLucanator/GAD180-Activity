@@ -13,6 +13,7 @@ TagManager:
   - ground
   - Lives
   - Track
+  - Abductee
   layers:
   - Default
   - TransparentFX

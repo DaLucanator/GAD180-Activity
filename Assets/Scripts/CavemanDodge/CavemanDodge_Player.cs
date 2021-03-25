@@ -23,9 +23,7 @@ public class CaveManDodge_Player : MonoBehaviour
 
         newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
 
-
         rb.MovePosition(newPosition);
-
     }
 
     private void OnCollisionEnter2D()
