@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CaveManAbduct.unity
     guid: d02d582a277791340b7adb435837552e
+  - enabled: 1
+    path: Assets/Scenes/CaveManHunt.unity
+    guid: 892383749f0596841a3ecec645954b57
   - enabled: 0
     path: Assets/Scenes/CaveManSling.unity
     guid: e6208a8ba959bb34cad492d243b5e3a6
