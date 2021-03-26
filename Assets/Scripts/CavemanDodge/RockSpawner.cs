@@ -17,15 +17,11 @@ public class RockSpawner : MonoBehaviour
             SpawnRocks();
             timeToSpawn = Time.time + timeBetweenWaves;
         }
-        
-
-
     }
 
      void SpawnRocks()
     {
         int randomIndex = Random.Range(0, spawnPoints.Length);
-
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             if (randomIndex != i)

@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CaveManSling_Controller : MonoBehaviour
 {
-    //private static int _nextLevelIndex = 1;
-    
     public Text GameWinText;
     public Button NextLevelBtn;
     private Enemy[] _enemies;

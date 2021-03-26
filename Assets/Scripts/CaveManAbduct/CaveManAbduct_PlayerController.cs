@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CaveManAbduct_PlayerController : MonoBehaviour
 {
-    Vector2 movement;
-    BoxCollider2D beamCollider;
+    public Vector2 movement;
 
+    public BoxCollider2D beamCollider;
     public Rigidbody2D rb;
 
     private float speed = 15f;
@@ -19,7 +19,6 @@ public class CaveManAbduct_PlayerController : MonoBehaviour
 
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             beamCollider.enabled = true;
@@ -35,11 +34,9 @@ public class CaveManAbduct_PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
-
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
 
         Vector2 newPosition = rb.position + Vector2.right * x;
-
         newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
 
         rb.MovePosition(newPosition);

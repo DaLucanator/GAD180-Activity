@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -15,7 +13,6 @@ public class CaveManSling_Player : MonoBehaviour
 
     private bool _headLaunched;
     private float _idle;
-    private float _lives;
 
     void Awake()
     {
@@ -31,7 +28,6 @@ public class CaveManSling_Player : MonoBehaviour
         {
             _idle += Time.deltaTime;
         }
-
         if(transform.position.y > 10 ||
             transform.position.y < -10 ||
             transform.position.x > 10 ||
@@ -39,7 +35,6 @@ public class CaveManSling_Player : MonoBehaviour
             _idle > 2)
         {
             currentLives -= 1;
-
             if (currentLives <= 0)
             {
             GameOver();
@@ -49,8 +44,6 @@ public class CaveManSling_Player : MonoBehaviour
                 int sceneIndex = SceneManager.GetActiveScene().buildIndex;
                 SceneManager.LoadScene(sceneIndex);
             }
-
-         
         }
     }
 
@@ -63,12 +56,10 @@ public class CaveManSling_Player : MonoBehaviour
     private void OnMouseUp()
     {
         GetComponent<SpriteRenderer>().color = Color.white;
-
         Vector2 directionToInitialPosition = _startPos - transform.position;
         GetComponent<Rigidbody2D>().AddForce(directionToInitialPosition * _launchPower);
         GetComponent<Rigidbody2D>().gravityScale = 1;
         _headLaunched = true;
-
         GetComponent<LineRenderer>().enabled = false;
     }
 

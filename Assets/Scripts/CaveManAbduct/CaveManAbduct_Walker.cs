@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class CaveManAbduct_Walker : MonoBehaviour
 {
     [SerializeField] public static float abductionCount = 0f;
@@ -25,7 +24,6 @@ public class CaveManAbduct_Walker : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Abduction not true, patrol you shall.
         if (!abducted)
         {
             if (movingLeft)
@@ -39,13 +37,10 @@ public class CaveManAbduct_Walker : MonoBehaviour
 
                     transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), leftPosition, 4f * Time.deltaTime);
                 }
-
                 if (transform.position.x == endPoint)
                 {
                     movingLeft = false;
                 }
-
-
             }
             else if (!movingLeft)
             {
@@ -58,26 +53,22 @@ public class CaveManAbduct_Walker : MonoBehaviour
 
                     transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), rightPosition, 4f * Time.deltaTime);
                 }
-
                 if (transform.position.x == endPoint)
                 {
                     movingLeft = true;
                 }
             }
         }
-        //Abduction is true
         else
         {
             Vector2 ufoPosition = player.transform.position;
             transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), ufoPosition, 4f * Time.deltaTime);
-
             if (transform.position.y >= 3f)
             {
                 Destroy(gameObject);
                 abductionCount++;
             }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

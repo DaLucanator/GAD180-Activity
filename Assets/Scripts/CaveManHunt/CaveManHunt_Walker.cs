@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CaveManHunt_Walker : MonoBehaviour
 {
-
     public GameObject StartPosition;
     public GameObject FirstStop;
     public GameObject SecondStop;
@@ -32,12 +31,10 @@ public class CaveManHunt_Walker : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1;
-
         DinoHealth.text = "" + dinoHealth;
 
         rb = GetComponent<Rigidbody2D>();
         startPosition = rb.position;
-
         StartPosition.GetComponent<Collider2D>();
         FirstStop.GetComponent<Collider2D>();
         SecondStop.GetComponent<Collider2D>();
@@ -46,15 +43,12 @@ public class CaveManHunt_Walker : MonoBehaviour
     void Update()
     {
         DinoHealth.text = "" + dinoHealth;
-
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
-
             if (hit.collider != null)
             {
-                //Debug.Log(hit.collider.name);
                 if (hit.collider.name == "Bush")
                 {
 
@@ -74,10 +68,8 @@ public class CaveManHunt_Walker : MonoBehaviour
         }
         else 
         { 
-
             if (movingToStart && rb.position == startPosition)
             {
-                //Debug.Log("movingToStart / rb : Condition Trigger");
                 readyToMoveRight = false;
                 SetDefaults();
             }
@@ -90,22 +82,18 @@ public class CaveManHunt_Walker : MonoBehaviour
 
                     transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), leftPosition, dinoSpeed * Time.deltaTime);
                 }
-
                 else if (readyToMoveRight)
                 {
                     transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), startPosition, dinoSpeed * Time.deltaTime);
                 }
-
                 else if (waitLeft)
                 {
                     StartCoroutine(WaitToBeShotLeft());
                 }
-
                 else if (waitRight)
                 {
                     StartCoroutine(WaitToBeShotRight());
                 }
-
             }
         }
     }
@@ -113,7 +101,6 @@ public class CaveManHunt_Walker : MonoBehaviour
     IEnumerator WaitToBeShotLeft()
     {
         yield return new WaitForSeconds(0.5f);
-
         waitLeft = false;
         readyToMoveLeft = true;
         readyToMoveRight = false;
@@ -121,7 +108,6 @@ public class CaveManHunt_Walker : MonoBehaviour
     IEnumerator WaitToBeShotRight()
     {
         yield return new WaitForSeconds(0.5f);
-
         waitRight = false;
         readyToMoveRight = true;
         readyToMoveLeft = false;
@@ -139,30 +125,24 @@ public class CaveManHunt_Walker : MonoBehaviour
     {
         if(collision.tag == "FirstStop")
         {
-            //Debug.Log("Trigger FirstStop");
             readyToMoveLeft = false;
             waitLeft = true;
-
             FirstStop.GetComponent<Collider2D>().enabled = false;
             SecondStop.GetComponent<Collider2D>().enabled = true;
         }
 
         if (collision.tag == "SecondStop")
         {
-            //Debug.Log("Trigger SecondStop");
             readyToMoveLeft = false;
             waitRight = true;
-
             SecondStop.GetComponent<Collider2D>().enabled = false;
             ThirdStop.GetComponent<Collider2D>().enabled = true;
         }
 
         if(collision.tag == "ThirdStop")
         {
-            //Debug.Log("Trigger ThirdStop");
             readyToMoveRight = false;
             waitRight = true;
-
             ThirdStop.GetComponent<Collider2D>().enabled = false;
             movingToStart = true;
         }
@@ -170,12 +150,10 @@ public class CaveManHunt_Walker : MonoBehaviour
 
     void SetDefaults()
     {
-        //Debug.Log("SetDefaults Trigger");
         movingToStart = false;
         readyToMoveRight = false;
         readyToMoveLeft = false;
         waitRight = false;
-        
         FirstStop.GetComponent<Collider2D>().enabled = true;
         StartCoroutine(WaitToBeShotLeft());
     }

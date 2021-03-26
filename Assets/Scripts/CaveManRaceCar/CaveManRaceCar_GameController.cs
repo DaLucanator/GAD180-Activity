@@ -9,7 +9,6 @@ public class CaveManRaceCar_GameController : MonoBehaviour
     public Text GameOverText;
     public Text GameWinText;
     public Button NextLevelBtn;
-
     public Text scoreObject;
     public GameObject raceCar;
 
@@ -29,13 +28,10 @@ public class CaveManRaceCar_GameController : MonoBehaviour
     void Update()
     {
         Rigidbody2D _rb = raceCar.GetComponent<Rigidbody2D>();
-
         scoreObject.text = "" + scoreValue;
-
         if (onTrack && ForwardVelocity().magnitude > 1)
         {
             scoreTimer += Time.deltaTime;
-
             if (scoreTimer >= scoreTimerTarget)
             {
                 scoreValue = scoreValue + 1;
@@ -46,7 +42,6 @@ public class CaveManRaceCar_GameController : MonoBehaviour
         {
             scoreTimer = 0f;
         }
-
         if(scoreValue >= 10)
         {
             GameWin();

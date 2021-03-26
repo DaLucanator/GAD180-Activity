@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class CaveManHunt_Reticle : MonoBehaviour
 {
-
     void Awake()
     {
         Cursor.visible = false;
     }
-
     void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

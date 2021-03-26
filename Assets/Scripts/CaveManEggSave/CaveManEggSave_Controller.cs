@@ -23,8 +23,8 @@ public class CaveManEggSave_Controller : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
-
         eggHealth = 100f;
+        dinosKilled = 0f;
         DinosStopped.text = "" + 0f;
         EggHealth.text = "" + 100f;
     }
@@ -38,7 +38,7 @@ public class CaveManEggSave_Controller : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
+        
         EggHealth.text = "" + eggHealth;
         DinosStopped.text = "" + dinosKilled;
 
@@ -51,7 +51,6 @@ public class CaveManEggSave_Controller : MonoBehaviour
             Debug.Log("Game Won!");
             GameWin();
         }
-
     }
     public void GameOver()
     {

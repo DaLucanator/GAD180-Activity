@@ -29,7 +29,4 @@ public class CaveManDodge_ScoreCollider : MonoBehaviour
     {
         wavesPassed++;
     }
-
-    
-    
 }

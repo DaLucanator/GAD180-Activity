@@ -25,7 +25,6 @@ public class DinoWalker : MonoBehaviour
             Destroy(newParticle,3);
             CaveManEggSave_Controller.dinosKilled++;
         }
-
         if(collision.gameObject.tag == "Egg")
         {
             Destroy(gameObject);

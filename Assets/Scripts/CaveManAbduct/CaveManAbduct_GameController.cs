@@ -6,17 +6,16 @@ using UnityEngine.UI;
 
 public class CaveManAbduct_GameController : MonoBehaviour
 {
-
     public Text GameOverText;
     public Text GameWinText;
     public Button NextLevelBtn;
     public Text ScoreCount;
 
     public float currentScore = 0f;
+
     private void Start()
     {
         Time.timeScale = 1;
-
         ScoreCount.text = "" + 0f;
     }
     void Update()
