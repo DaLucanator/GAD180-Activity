@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CaveManAbduct_Walker : MonoBehaviour
 {
-    [SerializeField]public static float abductionCount = 0f;
+    [SerializeField] public static float abductionCount = 0f;
 
     private bool movingLeft = true;
     private bool abducted = false;
@@ -19,7 +19,6 @@ public class CaveManAbduct_Walker : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         startPosition = rb.position;
     }
@@ -72,12 +71,13 @@ public class CaveManAbduct_Walker : MonoBehaviour
             Vector2 ufoPosition = player.transform.position;
             transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), ufoPosition, 4f * Time.deltaTime);
 
-            if(transform.position.y >= 3f)
+            if (transform.position.y >= 3f)
             {
                 Destroy(gameObject);
                 abductionCount++;
             }
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
