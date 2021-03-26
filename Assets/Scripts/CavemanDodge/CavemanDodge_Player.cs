@@ -12,6 +12,8 @@ public class CaveManDodge_Player : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
+
         rb = GetComponent<Rigidbody2D>();
     }
 

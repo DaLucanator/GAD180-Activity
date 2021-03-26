@@ -7,7 +7,6 @@ public class HighScoreTable : MonoBehaviour
     private Transform entryContainer;
     private Transform entryTemplate;
 
-
     void Awake()
     {
         entryContainer = transform.Find("HighScoreEntryContainer");
@@ -23,8 +22,5 @@ public class HighScoreTable : MonoBehaviour
             entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * i);
             entryTransform.gameObject.SetActive(true);
         }
-
-
     }
-
 }

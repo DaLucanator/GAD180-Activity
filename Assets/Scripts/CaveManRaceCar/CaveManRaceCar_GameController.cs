@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class CaveManRaceCar_GameController : MonoBehaviour
 {
-
     public Text GameOverText;
     public Text GameWinText;
     public Button NextLevelBtn;
@@ -23,6 +22,7 @@ public class CaveManRaceCar_GameController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         scoreObject.text = "";
     }
 
@@ -51,8 +51,6 @@ public class CaveManRaceCar_GameController : MonoBehaviour
         {
             GameWin();
         }
-
-
     }
 
     public Vector2 ForwardVelocity()
@@ -72,16 +70,20 @@ public class CaveManRaceCar_GameController : MonoBehaviour
 
     public void GameOver()
     {
+        Time.timeScale = 0;
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
     }
     public void GameWin()
     {
+        Time.timeScale = 0;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
     }
     public void NextLevel()
     {
+        Time.timeScale = 1;
+        StopAllCoroutines();
         CaveLife_LevelController.OnLevelComplete(1);
     }
 }

@@ -22,6 +22,9 @@ public class CaveManEggSave_Controller : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
+
+        eggHealth = 100f;
         DinosStopped.text = "" + 0f;
         EggHealth.text = "" + 100f;
     }

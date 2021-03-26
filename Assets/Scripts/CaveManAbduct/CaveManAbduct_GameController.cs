@@ -15,6 +15,8 @@ public class CaveManAbduct_GameController : MonoBehaviour
     public float currentScore = 0f;
     private void Start()
     {
+        Time.timeScale = 1;
+
         ScoreCount.text = "" + 0f;
     }
     void Update()

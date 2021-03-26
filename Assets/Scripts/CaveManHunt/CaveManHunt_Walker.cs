@@ -31,6 +31,8 @@ public class CaveManHunt_Walker : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
+
         DinoHealth.text = "" + dinoHealth;
 
         rb = GetComponent<Rigidbody2D>();
@@ -181,18 +183,21 @@ public class CaveManHunt_Walker : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
+        Cursor.visible = true;
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
     }
     public void GameWin()
     {
         Time.timeScale = 0;
+        Cursor.visible = true;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
     }
     public void NextLevel()
     {
         Time.timeScale = 1;
+        StopAllCoroutines();
         CaveLife_LevelController.OnLevelComplete(1);
     }
 

@@ -12,6 +12,10 @@ public class CaveManSling_Controller : MonoBehaviour
     public Button NextLevelBtn;
     private Enemy[] _enemies;
 
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     private void OnEnable()
     {
         _enemies = FindObjectsOfType<Enemy>();
@@ -31,9 +35,9 @@ public class CaveManSling_Controller : MonoBehaviour
     
     public void GameWin()
     {
+        Time.timeScale = 0;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        Time.timeScale = 0;
     }
 
     public void NextLevel()
