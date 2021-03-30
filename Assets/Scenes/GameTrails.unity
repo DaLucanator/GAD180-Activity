@@ -1163,7 +1163,6 @@ Transform:
   - {fileID: 1221154513}
   - {fileID: 1837166747}
   - {fileID: 251953842}
-  - {fileID: 1828966291}
   m_Father: {fileID: 1835379638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13900,7 +13899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78c4e2c66dd0dc428746f0348d12554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 1828966292}
   moveSpeed: 100
 --- !u!212 &1828966290
 SpriteRenderer:
@@ -13961,11 +13960,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828966288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.4000244, y: -628, z: 464.7686}
-  m_LocalScale: {x: 6, y: 6, z: 0}
+  m_LocalPosition: {x: 647.3965, y: 37.702576, z: 0.13293457}
+  m_LocalScale: {x: 5.9911375, y: 5.9911375, z: 0}
   m_Children: []
-  m_Father: {fileID: 239997534}
-  m_RootOrder: 8
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1828966292
 Rigidbody2D:
