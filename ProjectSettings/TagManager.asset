@@ -4,10 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ground
-  - GameWin
   - Egg
   - Dino
+  - HideOnPause
+  - NextLevelBtn
+  - ground
+  - Lives
+  - GameOver
+  - GameWin
+  - Branch
+  - Environment
+  - Rubble
   layers:
   - Default
   - TransparentFX
@@ -44,6 +51,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 1479920657
+    locked: 0
+  - name: Game
+    uniqueID: 985025715
     locked: 0
   - name: Default
     uniqueID: 0

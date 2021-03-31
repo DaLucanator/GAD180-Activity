@@ -7,13 +7,15 @@ using UnityEngine.UI;
 public class CaveManSling_Player : MonoBehaviour
 {
     [SerializeField] private float _launchPower = 300;
+    [SerializeField] public int currentLives = 3;
+
+    public Text GameOverText;
+    public Button NextLevelBtn;
 
     private Vector3 _startPos;
     private bool _headLaunched;
     private float _idle;
     private float _lives;
-    public Button NextLevelBtn;
-    public Text GameOverText;
 
     void Awake()
     {
@@ -36,17 +38,22 @@ public class CaveManSling_Player : MonoBehaviour
             transform.position.x < -10 ||
             _idle > 2)
         {
-            //ResetSlingGame();
-            //SceneManager.LoadScene(1);
-            /*
-            _lives++;
-                if(_lives == 3)
-        {
-                CaveManSling_Player.GameOver();
-        }
-            */
+
+
+            currentLives -= 1;
+
+            if (currentLives <= 0)
+            {
             GameOver();
-      }
+            }
+            else
+            {
+                int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(sceneIndex);
+            }
+
+         
+        }
     }
 
     private void OnMouseDown()
@@ -72,16 +79,12 @@ public class CaveManSling_Player : MonoBehaviour
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(newPosition.x, newPosition.y);
     }
-
-    //Not Active.
     /*
-    private void ResetSlingGame()
+    public void GameOver()
     {
-        GetComponent<Rigidbody2D>().gravityScale = 0;
-        transform.position = _startPos;
-        _headLaunched = false;
-        _idle = 0f;
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        GameOverText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
     */
     public void GameOver()
