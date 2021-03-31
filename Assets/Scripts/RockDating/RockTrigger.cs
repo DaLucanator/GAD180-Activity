@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
 
 public class RockTrigger : MonoBehaviour
 {
-    public UnityEvent Failed;
-    public UnityEvent Passed;
-    public bool failed;
-    public Animator explosionAnim;
-    public Animator pileAnim;
+
+    public Text GameOverText;
+    public Text GameWinText;
+    public Button NextLevelBtn;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,34 +20,30 @@ public class RockTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.tag == "Fail")
+        if (other.tag == "GameOver")
         {
-            failed = true;
-            StartCoroutine("Delay");
+            GameOver();
         }
-        else if (other.tag == "Pass")
+        else if (other.tag == "GameWin")
         {
-            failed = false;
-            StartCoroutine("Delay");
+            GameWin();
         }
     }
-    IEnumerator Delay()
+    public void GameOver()
     {
-        yield return new WaitForSeconds(2);
-        if(failed == true)
-        {
-            Failed.Invoke();
-        }
-        else if (failed == false)
-        {
-            Passed.Invoke();
-        }
-
-        yield return null;
+        GameOverText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
-    // Update is called once per frame
-    void Update()
+    public void GameWin()
     {
-        
+        GameWinText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void NextLevel()
+    {
+        CaveLife_LevelController.OnLevelComplete(1);
+        Time.timeScale = 1;
     }
 }

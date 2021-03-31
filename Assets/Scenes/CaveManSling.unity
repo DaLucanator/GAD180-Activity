@@ -1096,6 +1096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _launchPower: 300
 <<<<<<< HEAD
+<<<<<<< HEAD
   NextLevelBtn: {fileID: 1921973251}
   GameOverText: {fileID: 1148444062}
 =======
@@ -1103,6 +1104,11 @@ MonoBehaviour:
   GameOverText: {fileID: 1148444062}
   NextLevelBtn: {fileID: 1921973251}
 >>>>>>> MicroGames-Ali
+=======
+  currentLives: 3
+  GameOverText: {fileID: 1148444062}
+  NextLevelBtn: {fileID: 1921973251}
+>>>>>>> main
 --- !u!120 &774310934
 LineRenderer:
   m_ObjectHideFlags: 0
