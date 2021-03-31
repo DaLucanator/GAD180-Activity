@@ -18,7 +18,6 @@ public class CaveManDodge_LevelController : MonoBehaviour
             if (enemy != null)
                 return;
         }
-
         Debug.Log("All Enemies Dead.");
     }
 }

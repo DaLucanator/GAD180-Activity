@@ -13,11 +13,6 @@ public class CaveManRaceCar_Controller : MonoBehaviour
     float minSlippyVelocity = 1.5f;
     float _trqForceAdjuster;
 
-    void Start()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         Rigidbody2D _rb = GetComponent<Rigidbody2D>();
@@ -43,14 +38,13 @@ public class CaveManRaceCar_Controller : MonoBehaviour
 
         _rb.angularVelocity = Input.GetAxis("Horizontal") * _trqForceAdjuster;
 
-
     }
 
-    Vector2 ForwardVelocity()
+    public Vector2 ForwardVelocity()
     {
         return transform.up * Vector2.Dot(GetComponent<Rigidbody2D>().velocity, transform.up);
     }
-    Vector2 RightVelocity()
+    public Vector2 RightVelocity()
     {
         return transform.right * Vector2.Dot(GetComponent<Rigidbody2D>().velocity, transform.right);
     }

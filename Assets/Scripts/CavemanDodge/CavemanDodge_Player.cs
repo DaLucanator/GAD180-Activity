@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CaveManDodge_Player : MonoBehaviour
 {
-
     public float speed = 15f;
     public float mapWidth = 7.5f;
 
@@ -12,6 +11,8 @@ public class CaveManDodge_Player : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
+
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -20,17 +21,13 @@ public class CaveManDodge_Player : MonoBehaviour
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
 
         Vector2 newPosition = rb.position + Vector2.right * x;
-
         newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
 
-
         rb.MovePosition(newPosition);
-
     }
 
     private void OnCollisionEnter2D()
     {
         FindObjectOfType<CaveManDodgeGameManager>().EndGame();
     }
-
 }

@@ -5,11 +5,9 @@ using UnityEngine;
 public class DinoSpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
-
     public GameObject dinoPrefab;
 
     public float timeBetweenWaves = 1f;
-
     private float timeToSpawn = 2f;
 
     void Update()
@@ -24,7 +22,6 @@ public class DinoSpawner : MonoBehaviour
     void SpawnDinos()
     {
         int randomIndex = Random.Range(0, spawnPoints.Length);
-
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             if (randomIndex == i)

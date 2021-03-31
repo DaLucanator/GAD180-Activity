@@ -16,7 +16,14 @@ TagManager:
   - NextLevelBtn
   - ground
   - Lives
->>>>>>> MicroGames-Ali
+  - Track
+  - Abductee
+  - Reticle
+  - StartPosition
+  - FirstStop
+  - SecondStop
+  - ThirdStop
+  - Bush
   layers:
   - Default
   - TransparentFX

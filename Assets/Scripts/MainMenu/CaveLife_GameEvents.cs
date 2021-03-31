@@ -13,7 +13,9 @@ public class CaveLife_GameEvents : MonoBehaviour
     public static int sceneNumber;
     public static string[] arrayOfUsedScenes;
     public static int currentScene;
+    public bool hsShowing = false;
 
+    public GameObject HighScoreTable;
     public Button Btn_Start;
     public Button Btn_HighScore;
 
@@ -46,6 +48,20 @@ public class CaveLife_GameEvents : MonoBehaviour
     public void CaveLifeStart()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void CaveLifeHighScore()
+    {
+        if (hsShowing)
+        {
+            HighScoreTable.SetActive(false);
+            hsShowing = false;
+        }
+        else if (!hsShowing)
+        {
+            HighScoreTable.SetActive(true);
+            hsShowing = true;
+        }
     }
 
     //TODO
