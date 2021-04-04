@@ -13,10 +13,7 @@ public class CaveManSling_Player : MonoBehaviour
 
     private bool _headLaunched;
     private float _idle;
-<<<<<<< HEAD
-=======
-    private float _lives;
->>>>>>> main
+
 
     void Awake()
     {
@@ -51,10 +48,6 @@ public class CaveManSling_Player : MonoBehaviour
                 SceneManager.LoadScene(sceneIndex);
             }
         }
-<<<<<<< HEAD
->>>>>>> MicroGames-Ali
-=======
->>>>>>> main
     }
 
     private void OnMouseDown()
@@ -78,24 +71,7 @@ public class CaveManSling_Player : MonoBehaviour
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(newPosition.x, newPosition.y);
     }
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-    //Not Active.
-    /*
-    private void ResetSlingGame()
-=======
-    public void GameOver()
->>>>>>> MicroGames-Ali
-=======
-    /*
-    public void GameOver()
->>>>>>> main
-    {
-        GameOverText.gameObject.SetActive(true);
-        NextLevelBtn.gameObject.SetActive(true);
-    }
-    */
     public void GameOver()
     {
         GameOverText.gameObject.SetActive(true);
