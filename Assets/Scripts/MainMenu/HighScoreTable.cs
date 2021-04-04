@@ -22,15 +22,16 @@ public class HighScoreTable : MonoBehaviour
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
+        SortAndAddDummy();
 
         // Simple sort
+        /*
         for (int i= 0; i < highscores.highscoreEntryList.Count; i++)
         {
             for(int j = i+1; j< highscores.highscoreEntryList.Count; j++)
             {
                 if (highscores.highscoreEntryList[j].score > highscores.highscoreEntryList[i].score)
                 {
-                    // Swap
                     HighscoreEntry temp = highscores.highscoreEntryList[i];
                     highscores.highscoreEntryList[i] = highscores.highscoreEntryList[j];
                     highscores.highscoreEntryList[j] = temp;
@@ -51,15 +52,42 @@ public class HighScoreTable : MonoBehaviour
                 AddHighscoreEntry(0, "AAA");
             }
         }
-
+        */
         
     }
 
-    private void FixedUpdate()
+public void SortAndAddDummy()
     {
-        
+        string jsonString = PlayerPrefs.GetString("highscoreTable");
+        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+
+        for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
+        {
+            for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++)
+            {
+                if (highscores.highscoreEntryList[j].score > highscores.highscoreEntryList[i].score)
+                {
+                    HighscoreEntry temp = highscores.highscoreEntryList[i];
+                    highscores.highscoreEntryList[i] = highscores.highscoreEntryList[j];
+                    highscores.highscoreEntryList[j] = temp;
+                }
+            }
+        }
+
+        highscoreEntryTransformList = new List<Transform>();
+        for (int i = 0; i < totalTopScores; i++)
+        {
+            if (i < highscores.highscoreEntryList.Count)
+            {
+                HighscoreEntry highscoreEntry = highscores.highscoreEntryList[i];
+                CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+            }
+            else
+            {
+                AddHighscoreEntry(0, "AAA");
+            }
+        }
     }
-    #region Methods
 
     public void ClearScores()
     {
@@ -68,6 +96,11 @@ public class HighScoreTable : MonoBehaviour
             Destroy(highscoreEntryTransformList[i].gameObject);
         }
 
+        SortAndAddDummy();
+
+        SaveScores();
+
+        /*
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = new Highscores();
 
@@ -77,7 +110,20 @@ public class HighScoreTable : MonoBehaviour
             entry.score = 0;
             entry.name = "AAA";
         }
+        
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscoreTable", json);
+        PlayerPrefs.Save();
+        */
 
+    }
+
+    public void SaveScores()
+    {
+        string jsonString = PlayerPrefs.GetString("highscoreTable");
+        Highscores highscores = new Highscores();
+
+        //Save updated Highscores
         string json = JsonUtility.ToJson(highscores);
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save();
@@ -113,9 +159,8 @@ public class HighScoreTable : MonoBehaviour
 
         transformList.Add(entryTransform);
     }
-    #endregion
-
-    private void AddHighscoreEntry(int score, string name)
+    
+    public static void AddHighscoreEntry(int score, string name)
     {
         //Create Highscore Entry
         HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name };

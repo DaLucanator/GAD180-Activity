@@ -15,6 +15,13 @@ public class CaveLife_GameEvents : MonoBehaviour
     public static int currentScene;
     public bool hsShowing = false;
 
+    public static float currentScore;
+    public static string currentName;
+
+    public GameObject AddNameBackground;
+    public GameObject ErrorInputBox;
+    public Text InputText;
+
     public GameObject HighScoreTable;
     public Button Btn_Start;
     public Button Btn_HighScore;
@@ -35,7 +42,7 @@ public class CaveLife_GameEvents : MonoBehaviour
             //Shuffle(arrayOfScenes);
         }
     }
-    
+
     public event Action<int> onLevelComplete;
     public void LevelComplete(int id)
     {
@@ -47,8 +54,30 @@ public class CaveLife_GameEvents : MonoBehaviour
 
     public void CaveLifeStart()
     {
-        SceneManager.LoadScene(1);
+        AddNameBackground.gameObject.SetActive(true);
     }
+
+    public void SubmitName()
+    {
+
+        if (InputText.text != null && InputText.text.Length <= 3)
+        {
+            currentName = InputText.text;
+            currentScore = 0f;
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            ErrorInputBox.gameObject.SetActive(true);
+        }
+    }
+
+    public void ErrorBoxOk()
+    {
+        InputText.text = "";
+        ErrorInputBox.gameObject.SetActive(false);
+    }
+
 
     public void CaveLifeHighScore()
     {
@@ -63,6 +92,9 @@ public class CaveLife_GameEvents : MonoBehaviour
             hsShowing = true;
         }
     }
+
+
+
 
     //TODO
 
