@@ -18,11 +18,14 @@ public class CaveLife_LevelController : MonoBehaviour
     {
         if (id == 1)
         {
-            //currentScene variable starts at element 0 initilialised in the Game Events, the list of scenes is not randomised currently as shuffle is not working as expected.
+            //currentScene variable starts at element 0 initilialised in the Game Events, the list of scenes is not randomised currently as shuffle is not working. So index 0 is always main menu in build list.
 
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
             if (nextSceneIndex > CaveLife_GameEvents.sceneNumber - 1)
             {
+                //Save Score and Name
+                HighScoreTable.AddHighscoreEntry(CaveLife_GameEvents.currentScore, CaveLife_GameEvents.currentName);
+
                 SceneManager.LoadScene(0);
                 Debug.Log("Returned to Main Menu, all Games finished.");
             }

@@ -9,10 +9,16 @@ public class CaveManDodge_Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public GameObject HowToContainer;
+
+    private void Awake()
+    {
+        Time.timeScale = 0;
+        HowToContainer.gameObject.SetActive(true);
+    }
+
     private void Start()
     {
-        Time.timeScale = 1;
-
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -24,6 +30,11 @@ public class CaveManDodge_Player : MonoBehaviour
         newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
 
         rb.MovePosition(newPosition);
+    }
+    public void HowToOk()
+    {
+        HowToContainer.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void OnCollisionEnter2D()

@@ -13,6 +13,13 @@ public class CaveManRaceCar_Controller : MonoBehaviour
     float minSlippyVelocity = 1.5f;
     float _trqForceAdjuster;
 
+    public GameObject HowToContainer;
+
+    private void Awake()
+    {
+        _spdForce = 0f;
+        HowToContainer.gameObject.SetActive(true);
+    }
     void FixedUpdate()
     {
         Rigidbody2D _rb = GetComponent<Rigidbody2D>();
@@ -47,5 +54,11 @@ public class CaveManRaceCar_Controller : MonoBehaviour
     public Vector2 RightVelocity()
     {
         return transform.right * Vector2.Dot(GetComponent<Rigidbody2D>().velocity, transform.right);
+    }
+    public void HowToOk()
+    {
+        HowToContainer.gameObject.SetActive(false);
+        _spdForce = 10f;
+        Time.timeScale = 1;
     }
 }

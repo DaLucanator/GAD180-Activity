@@ -28,9 +28,10 @@ public class CaveManHunt_Walker : MonoBehaviour
     public float dinoHealth = 15f;
     public float dinoSpeed = 8f;
 
+    public GameObject HowToContainer;
+
     private void Awake()
     {
-        Time.timeScale = 1;
         DinoHealth.text = "" + dinoHealth;
 
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +39,9 @@ public class CaveManHunt_Walker : MonoBehaviour
         StartPosition.GetComponent<Collider2D>();
         FirstStop.GetComponent<Collider2D>();
         SecondStop.GetComponent<Collider2D>();
+
+        Time.timeScale = 0;
+        HowToContainer.gameObject.SetActive(true);
     }
 
     void Update()
@@ -97,7 +101,11 @@ public class CaveManHunt_Walker : MonoBehaviour
             }
         }
     }
-
+    public void HowToOk()
+    {
+        HowToContainer.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
     IEnumerator WaitToBeShotLeft()
     {
         yield return new WaitForSeconds(0.5f);

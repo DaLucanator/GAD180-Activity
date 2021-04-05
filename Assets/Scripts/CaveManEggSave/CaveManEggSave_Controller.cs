@@ -18,11 +18,18 @@ public class CaveManEggSave_Controller : MonoBehaviour
     public Text EggHealth;
     public Rigidbody2D rb;
 
+    public GameObject HowToContainer;
+
     Vector2 movement;
 
+    private void Awake()
+    {
+        Time.timeScale = 0;
+        HowToContainer.gameObject.SetActive(true);
+    }
     private void Start()
     {
-        Time.timeScale = 1;
+        
         eggHealth = 100f;
         dinosKilled = 0f;
         DinosStopped.text = "" + 0f;
@@ -52,6 +59,12 @@ public class CaveManEggSave_Controller : MonoBehaviour
             GameWin();
         }
     }
+    public void HowToOk()
+    {
+        HowToContainer.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     public void GameOver()
     {
         GameOverText.gameObject.SetActive(true);

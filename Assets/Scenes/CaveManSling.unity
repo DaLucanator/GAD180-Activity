@@ -1096,7 +1096,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _launchPower: 300
 <<<<<<< HEAD
-<<<<<<< HEAD
   NextLevelBtn: {fileID: 1921973251}
   GameOverText: {fileID: 1148444062}
 =======
