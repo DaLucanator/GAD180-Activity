@@ -15,8 +15,8 @@ public class CaveLife_GameEvents : MonoBehaviour
     public static int currentScene;
     public bool hsShowing = false;
 
-    public static int currentScore;
-    public static string currentName;
+    public static int _playerScore;
+    public static string _playerName;
 
     public GameObject AddNameBackground;
     public GameObject ErrorInputBox;
@@ -59,11 +59,10 @@ public class CaveLife_GameEvents : MonoBehaviour
 
     public void SubmitName()
     {
-
         if (InputText.text != null && InputText.text.Length <= 3)
         {
-            currentName = InputText.text;
-            currentScore = 0;
+            _playerName = InputText.text;
+            _playerScore = 0;
             SceneManager.LoadScene(1);
         }
         else
@@ -92,8 +91,6 @@ public class CaveLife_GameEvents : MonoBehaviour
             hsShowing = true;
         }
     }
-
-
 
 
     //TODO

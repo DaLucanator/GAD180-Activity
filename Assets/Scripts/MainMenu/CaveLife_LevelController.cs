@@ -24,7 +24,7 @@ public class CaveLife_LevelController : MonoBehaviour
             if (nextSceneIndex > CaveLife_GameEvents.sceneNumber - 1)
             {
                 //Save Score and Name
-                HighScoreTable.AddHighscoreEntry(CaveLife_GameEvents.currentScore, CaveLife_GameEvents.currentName);
+                HighScoreTable.AddHighscoreEntry(CaveLife_GameEvents._playerScore, CaveLife_GameEvents._playerName);
 
                 SceneManager.LoadScene(0);
                 Debug.Log("Returned to Main Menu, all Games finished.");

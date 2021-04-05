@@ -54,7 +54,7 @@ public class CaveManAbduct_GameController : MonoBehaviour
         Time.timeScale = 0;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        CaveLife_GameEvents.currentScore += 1;
+        CaveLife_GameEvents._playerScore += 1;
     }
     public void NextLevel()
     {
