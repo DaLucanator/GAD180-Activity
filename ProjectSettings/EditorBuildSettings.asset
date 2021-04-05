@@ -11,19 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CaveManAbduct.unity
     guid: d02d582a277791340b7adb435837552e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CaveManDodge.unity
     guid: 3a852dc8028d9cf45afd1f4129649f94
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CaveManEggSave.unity
     guid: 4c5d94dd0f073de47bd8b7cdf0990472
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CaveManHunt.unity
     guid: 892383749f0596841a3ecec645954b57
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CaveManRaceCar.unity
     guid: f377823672a6ab44a8b735901ebddd9a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CaveManSling.unity
     guid: e6208a8ba959bb34cad492d243b5e3a6
   m_configObjects: {}

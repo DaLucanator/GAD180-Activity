@@ -14,10 +14,13 @@ public class CaveManSling_Player : MonoBehaviour
     private bool _headLaunched;
     private float _idle;
 
+    public GameObject HowToContainer;
 
     void Awake()
     {
+        Time.timeScale = 1;
         _startPos = transform.position;
+        HowToContainer.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -35,8 +38,6 @@ public class CaveManSling_Player : MonoBehaviour
             transform.position.x < -10 ||
             _idle > 2)
         {
-
-
             currentLives -= 1;
             if (currentLives <= 0)
             {
@@ -48,6 +49,11 @@ public class CaveManSling_Player : MonoBehaviour
                 SceneManager.LoadScene(sceneIndex);
             }
         }
+    }
+    public void HowToOk()
+    {
+        HowToContainer.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void OnMouseDown()
@@ -76,11 +82,5 @@ public class CaveManSling_Player : MonoBehaviour
     {
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        Time.timeScale = 0;
-    }
-    public void NextLevel()
-    {
-        CaveLife_LevelController.OnLevelComplete(1);
-        Time.timeScale = 1;
     }
 }
