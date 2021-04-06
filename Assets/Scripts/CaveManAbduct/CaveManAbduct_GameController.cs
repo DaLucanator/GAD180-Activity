@@ -12,7 +12,7 @@ public class CaveManAbduct_GameController : MonoBehaviour
     public Text ScoreCount;
     public GameObject HowToContainer;
 
-
+    public bool wonGame = false;
     public float currentScore = 0f;
 
     private void Awake()
@@ -48,19 +48,26 @@ public class CaveManAbduct_GameController : MonoBehaviour
         Time.timeScale = 0;
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
+        wonGame = false;
     }
     public void GameWin()
     {
         Time.timeScale = 0;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
+        wonGame = true;
     }
     public void NextLevel()
     {
-        CaveLife_GameEvents._playerScore += 1;
         CaveManAbduct_Walker.abductionCount = 0f;
         currentScore = 0f;
         Time.timeScale = 1;
+
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
         CaveLife_LevelController.OnLevelComplete(1);
     }
 }

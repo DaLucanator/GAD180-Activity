@@ -1118,6 +1118,7 @@ MonoBehaviour:
   onTrack: 0
   scoreValue: 0
   scoreTimerTarget: 2
+  wonGame: 0
 --- !u!1 &433173466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,6 +1893,7 @@ GameObject:
   - component: {fileID: 1010231776}
   - component: {fileID: 1010231775}
   - component: {fileID: 1010231774}
+  - component: {fileID: 1010231777}
   m_Layer: 0
   m_Name: RaceCar
   m_TagString: Player
@@ -2020,8 +2022,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.68, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 952098784}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

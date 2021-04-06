@@ -8,6 +8,7 @@ public class CaveManDodgeGameManager : MonoBehaviour
 {
     public float slowness = 10f;
     public float x;
+    public bool wonGame = false;
 
     public Text GameOverText;
     public Text GameWinText;
@@ -34,6 +35,8 @@ public class CaveManDodgeGameManager : MonoBehaviour
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
         Time.timeScale = 0;
+
+        wonGame = false;
     }
 
     IEnumerator GameWon()
@@ -46,13 +49,21 @@ public class CaveManDodgeGameManager : MonoBehaviour
 
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
+
         Time.timeScale = 0;
+
+        wonGame = true;
     }
 
     public void NextLevel()
     {
         Time.fixedDeltaTime = x;
         Time.timeScale = 1;
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
         CaveLife_LevelController.OnLevelComplete(1);
     }
 }

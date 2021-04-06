@@ -17,7 +17,6 @@ public class CaveManRaceCar_Controller : MonoBehaviour
 
     private void Awake()
     {
-        _spdForce = 0f;
         HowToContainer.gameObject.SetActive(true);
     }
     void FixedUpdate()
@@ -44,7 +43,6 @@ public class CaveManRaceCar_Controller : MonoBehaviour
         _trqForceAdjuster = Mathf.Lerp(0, _trqForce, _rb.velocity.magnitude / 2);
 
         _rb.angularVelocity = Input.GetAxis("Horizontal") * _trqForceAdjuster;
-
     }
 
     public Vector2 ForwardVelocity()

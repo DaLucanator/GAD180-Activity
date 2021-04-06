@@ -27,6 +27,7 @@ public class CaveManHunt_Walker : MonoBehaviour
     public bool movingToStart = false;
     public float dinoHealth = 15f;
     public float dinoSpeed = 8f;
+    public bool wonGame = false;
 
     public GameObject HowToContainer;
 
@@ -105,6 +106,7 @@ public class CaveManHunt_Walker : MonoBehaviour
     {
         HowToContainer.gameObject.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
     IEnumerator WaitToBeShotLeft()
     {
@@ -172,6 +174,7 @@ public class CaveManHunt_Walker : MonoBehaviour
         Cursor.visible = true;
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
+        wonGame = false;
     }
     public void GameWin()
     {
@@ -179,11 +182,17 @@ public class CaveManHunt_Walker : MonoBehaviour
         Cursor.visible = true;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
+        wonGame = true;
     }
     public void NextLevel()
     {
         Time.timeScale = 1;
         StopAllCoroutines();
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
         CaveLife_LevelController.OnLevelComplete(1);
     }
 

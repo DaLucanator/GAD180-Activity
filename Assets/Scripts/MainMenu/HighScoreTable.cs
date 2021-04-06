@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class HighScoreTable : MonoBehaviour
 {
+    public static HighScoreTable instance;
+
     public int totalTopScores = 10;
-    bool _listDestroyed = false;
+    private Highscores highscores;
 
     private Transform entryContainer;
     private Transform entryTemplate;
@@ -16,23 +18,48 @@ public class HighScoreTable : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
+
         entryContainer = transform.Find("HighScoreEntryContainer");
         entryTemplate = entryContainer.Find("HighScoreEntryTemplate");
 
         entryTemplate.gameObject.SetActive(false);
 
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
-        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-
+        Instantiate();
         SortAndAddDummy();
     }
 
-public void SortAndAddDummy()
+    private void TotalListEntriesDebug()
     {
-        //Sort
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
-        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+        Debug.Log("Highscore entry list has " + highscores.highscoreEntryList.Count + " entries");
+        foreach(HighscoreEntry entry in highscores.highscoreEntryList)
+        {
+            Debug.Log(entry.name + " " + entry.score);
+        }
+    }
 
+    private void Instantiate()
+    {
+        Debug.Log("Instantiate");
+        string jsonString = PlayerPrefs.GetString("highscoreTable");
+        highscores = new Highscores();
+
+        if(jsonString == "")
+        {
+            highscores = new Highscores();
+            highscores.highscoreEntryList = new List<HighscoreEntry>();
+        }
+        else
+        {
+            highscores = JsonUtility.FromJson<Highscores>(jsonString);
+        }
+
+        TotalListEntriesDebug();
+    }
+
+    public void SortAndAddDummy()
+    {
+        //Sorting
         for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
         {
             for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++)
@@ -45,89 +72,70 @@ public void SortAndAddDummy()
                 }
             }
         }
-        //Add
+
+        //Adding
         highscoreEntryTransformList = new List<Transform>();
+
+        //Loop through the total number of top scores we want to display
         for (int i = 0; i < totalTopScores; i++)
         {
             if (i < highscores.highscoreEntryList.Count)
             {
-                HighscoreEntry highscoreEntry = highscores.highscoreEntryList[i];
-                CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+                //This entry exists, so just create a display medium for it
+                CreateHighscoreEntryTransform(highscores.highscoreEntryList[i]);
             }
             else
             {
-                AddHighscoreEntry(0, "AAA");
+                //Create a new dud entry
+                CreateHighscoreEntryTransform(AddHighscoreEntry(0, "AAA"));
             }
         }
 
-        if(_listDestroyed == true)
+        //Remove any scores that aren't in the top 10
+        if(highscores.highscoreEntryList.Count > totalTopScores)
         {
-            highscoreEntryTransformList = new List<Transform>();
-            for (int i = 0; i < totalTopScores; i++)
-            {
-                if (i < highscores.highscoreEntryList.Count)
-                {
-                    HighscoreEntry highscoreEntry = highscores.highscoreEntryList[i];
-                    CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
-                }
-                else
-                {
-                    AddHighscoreEntry(0, "AAA");
-                }
-            }
-            _listDestroyed = false;
+            int numToRemove = highscores.highscoreEntryList.Count - totalTopScores;
+            Debug.Log("Removing " + numToRemove);
+            highscores.highscoreEntryList.RemoveRange(totalTopScores - 1, numToRemove);
         }
+
+        SaveScores();
+        TotalListEntriesDebug();
     }
 
     public void ClearScores()
     {
-        /*
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
-        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-        highscores.highscoreEntryList.Clear();
-        SortAndAddDummy();
-        SaveScores();
-        */
-        /*
-        if (highscoreEntryTransformList.Count < 1)
-        {
-            Debug.Log("I ran");
-        }
-        else
-        {
-        */
         for (int i = 0; i < highscoreEntryTransformList.Count; i++)
-            {
-                Destroy(highscoreEntryTransformList[i].gameObject);
-                _listDestroyed = true;
-            }
+        {
+            Debug.Log("Destroying " + highscoreEntryTransformList[i]);
+            Destroy(highscoreEntryTransformList[i].gameObject);
+        }
+        //Clear the Player Prefs & highscores lists too
+        highscores.highscoreEntryList = new List<HighscoreEntry>();
+        PlayerPrefs.SetString("highscoreTable", "");
+        PlayerPrefs.Save();
 
-        //SortandAddDummy should recreate them but doesnt ?
+        //Re-add everything to the lists
         SortAndAddDummy();
-        SaveScores();
     }
 
-    public static void SaveScores()
+    public void SaveScores()
     {
-        //string jsonString = PlayerPrefs.GetString("highscoreTable");
-        Highscores highscores = new Highscores();
-        //Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-
         //Save updated Highscores
         string json = JsonUtility.ToJson(highscores);
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save();
     }
 
-    private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
+    private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry)
     {
         float templateHeight = 30f;
-        Transform entryTransform = Instantiate(entryTemplate, container);
+        Transform entryTransform = Instantiate(entryTemplate, entryContainer);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
-        entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * transformList.Count);
+        entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * highscoreEntryTransformList.Count);
         entryTransform.gameObject.SetActive(true);
 
-        int rank = transformList.Count + 1;
+        int rank = highscoreEntryTransformList.Count + 1;
         string rankString;
         switch (rank)
         {
@@ -147,38 +155,26 @@ public void SortAndAddDummy()
         string name = highscoreEntry.name;
         entryTransform.Find("NameText").GetComponent<Text>().text = name;
 
-        transformList.Add(entryTransform);
+        highscoreEntryTransformList.Add(entryTransform);
     }
     
-    public static void AddHighscoreEntry(int score, string name)
+    /// <summary>
+    /// Add a high score entry with a score and name
+    /// </summary>
+    /// <param name="score"></param>
+    /// <param name="name"></param>
+    public HighscoreEntry AddHighscoreEntry(int score, string name)
     {
+        Debug.LogWarning("Adding new score: " + name + " " + score);
+
         //Create Highscore Entry
         HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name };
-
-        //Load saved Highscores
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
-        Highscores highscores = new Highscores();
-
-        //If the list is empty, instantiate it
-        if(jsonString == "")
-        {
-            Debug.Log("Creating list");
-            highscores.highscoreEntryList = new List<HighscoreEntry>();
-        }
-        //Add the existing entries
-        else
-        {
-            Debug.Log("Loading list");
-            highscores = JsonUtility.FromJson<Highscores>(jsonString);
-        }        
 
         //Add new entry to Highscores
         highscores.highscoreEntryList.Add(highscoreEntry);
 
-        //Save updated Highscores
-        string json = JsonUtility.ToJson(highscores);
-        PlayerPrefs.SetString("highscoreTable", json);
-        PlayerPrefs.Save();
+        SaveScores();
+        return highscoreEntry;
     }
 
     private class Highscores
@@ -188,7 +184,7 @@ public void SortAndAddDummy()
 
     //Represents single high score entry
     [System.Serializable]
-    private class HighscoreEntry
+    public class HighscoreEntry
     {
         public int score;
         public string name;

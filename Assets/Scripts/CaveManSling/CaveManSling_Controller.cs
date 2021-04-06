@@ -7,6 +7,8 @@ public class CaveManSling_Controller : MonoBehaviour
     public Button NextLevelBtn;
     private Enemy[] _enemies;
 
+    public bool wonGame = false;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -33,11 +35,17 @@ public class CaveManSling_Controller : MonoBehaviour
         Time.timeScale = 0;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
+        wonGame = true;
     }
 
     public void NextLevel()
     {
         Time.timeScale = 1;
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
         CaveLife_LevelController.OnLevelComplete(1);
     }
 }

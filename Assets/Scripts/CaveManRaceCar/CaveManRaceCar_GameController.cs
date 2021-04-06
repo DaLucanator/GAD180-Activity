@@ -18,6 +18,7 @@ public class CaveManRaceCar_GameController : MonoBehaviour
     public float scoreValue = 0f;
     private float scoreTimer = 0f;
     public float scoreTimerTarget = 2f;
+    public bool wonGame = false;
 
     void Start()
     {
@@ -68,17 +69,24 @@ public class CaveManRaceCar_GameController : MonoBehaviour
         Time.timeScale = 0;
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
+        wonGame = false;
     }
     public void GameWin()
     {
         Time.timeScale = 0;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
+        wonGame = true;
     }
     public void NextLevel()
     {
         Time.timeScale = 1;
         StopAllCoroutines();
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
         CaveLife_LevelController.OnLevelComplete(1);
     }
 }

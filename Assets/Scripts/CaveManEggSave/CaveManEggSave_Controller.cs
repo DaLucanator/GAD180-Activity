@@ -10,7 +10,9 @@ public class CaveManEggSave_Controller : MonoBehaviour
     public static float dinosKilled = 0f;
 
     public float moveSpeed = 5f;
-    
+    public bool wonGame = false;
+
+
     public Text GameOverText;
     public Text GameWinText;
     public Button NextLevelBtn;
@@ -70,16 +72,23 @@ public class CaveManEggSave_Controller : MonoBehaviour
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
         Time.timeScale = 0;
+        wonGame = false;
     }
     public void GameWin()
     {
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
         Time.timeScale = 0;
+        wonGame = true;
     }
     public void NextLevel()
     {
         Time.timeScale = 1;
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
         CaveLife_LevelController.OnLevelComplete(1);
     }
 }
