@@ -67,6 +67,7 @@ public class CaveLife_GameEvents : MonoBehaviour
         }
         else
         {
+            AddNameBackground.SetActive(false);
             ErrorInputBox.gameObject.SetActive(true);
         }
     }
@@ -75,6 +76,7 @@ public class CaveLife_GameEvents : MonoBehaviour
     {
         InputText.text = "";
         ErrorInputBox.gameObject.SetActive(false);
+        AddNameBackground.SetActive(true);
     }
 
     //HighScore Btn Click
