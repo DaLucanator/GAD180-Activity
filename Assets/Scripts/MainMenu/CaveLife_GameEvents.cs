@@ -77,7 +77,7 @@ public class CaveLife_GameEvents : MonoBehaviour
         ErrorInputBox.gameObject.SetActive(false);
     }
 
-
+    //HighScore Btn Click
     public void CaveLifeHighScore()
     {
         if (hsShowing)

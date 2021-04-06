@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HighScoreTable : MonoBehaviour
 {
     public int totalTopScores = 10;
+    bool _listDestroyed = false;
+
     private Transform entryContainer;
     private Transform entryTemplate;
     private List<Transform> highscoreEntryTransformList;
@@ -57,6 +59,24 @@ public void SortAndAddDummy()
                 AddHighscoreEntry(0, "AAA");
             }
         }
+
+        if(_listDestroyed == true)
+        {
+            highscoreEntryTransformList = new List<Transform>();
+            for (int i = 0; i < totalTopScores; i++)
+            {
+                if (i < highscores.highscoreEntryList.Count)
+                {
+                    HighscoreEntry highscoreEntry = highscores.highscoreEntryList[i];
+                    CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+                }
+                else
+                {
+                    AddHighscoreEntry(0, "AAA");
+                }
+            }
+            _listDestroyed = false;
+        }
     }
 
     public void ClearScores()
@@ -79,7 +99,10 @@ public void SortAndAddDummy()
         for (int i = 0; i < highscoreEntryTransformList.Count; i++)
             {
                 Destroy(highscoreEntryTransformList[i].gameObject);
+                _listDestroyed = true;
             }
+
+        //SortandAddDummy should recreate them but doesnt ?
         SortAndAddDummy();
         SaveScores();
     }
@@ -169,7 +192,6 @@ public void SortAndAddDummy()
     {
         public int score;
         public string name;
-
     }
 
 }

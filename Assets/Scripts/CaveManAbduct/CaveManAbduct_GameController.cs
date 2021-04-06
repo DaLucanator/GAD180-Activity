@@ -23,7 +23,7 @@ public class CaveManAbduct_GameController : MonoBehaviour
 
     private void Start()
     {
-        
+        currentScore = 0f;
         ScoreCount.text = "" + 0f;
     }
     void Update()
@@ -54,10 +54,12 @@ public class CaveManAbduct_GameController : MonoBehaviour
         Time.timeScale = 0;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        CaveLife_GameEvents._playerScore += 1;
     }
     public void NextLevel()
     {
+        CaveLife_GameEvents._playerScore += 1;
+        CaveManAbduct_Walker.abductionCount = 0f;
+        currentScore = 0f;
         Time.timeScale = 1;
         CaveLife_LevelController.OnLevelComplete(1);
     }
