@@ -14,6 +14,10 @@ public class CaveManDodgeGameManager : MonoBehaviour
     public Text GameWinText;
     public Button NextLevelBtn;
 
+    private void Awake()
+    {
+        x = Time.fixedDeltaTime;
+    }
     public void EndGame()
     {
         StartCoroutine(GameOver());
@@ -27,7 +31,6 @@ public class CaveManDodgeGameManager : MonoBehaviour
     IEnumerator GameOver()
     {
         Time.timeScale = 1f / slowness;
-        x = Time.fixedDeltaTime;
         Time.fixedDeltaTime /= slowness;
 
         yield return new WaitForSeconds(1f / slowness);
@@ -42,7 +45,6 @@ public class CaveManDodgeGameManager : MonoBehaviour
     IEnumerator GameWon()
     {
         Time.timeScale = 1f / slowness;
-        x = Time.fixedDeltaTime;
         Time.fixedDeltaTime /= slowness;
 
         yield return new WaitForSeconds(1f / slowness);
