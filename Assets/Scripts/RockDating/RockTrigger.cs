@@ -13,6 +13,7 @@ public class RockTrigger : MonoBehaviour
     public Text GameWinText;
     public Button NextLevelBtn;
     public GameObject howToWindow;
+    public bool wonGame;
 
     public void Awake()
     {
@@ -44,19 +45,28 @@ public class RockTrigger : MonoBehaviour
     }
     public void GameOver()
     {
+        Time.timeScale = 0;
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        wonGame = false;
     }
     public void GameWin()
     {
+        Time.timeScale = 0;
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        wonGame = true;
     }
     public void NextLevel()
     {
-        CaveLife_LevelController.OnLevelComplete(1);
+        
         Time.timeScale = 1;
+
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
+        CaveLife_LevelController.OnLevelComplete(1);
     }
 }
