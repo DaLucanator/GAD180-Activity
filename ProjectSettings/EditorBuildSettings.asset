@@ -8,7 +8,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 92d02066f25484041acc86bf8c70fa16
+  - enabled: 0
+    path: Assets/Scenes/BreakfastUIVersion.unity
+    guid: f84e785ae22a0364884db330a62228f9
   - enabled: 1
+    path: Assets/Scenes/CavedIn.unity
+    guid: 45149a49390f16d4f8453543d5baf942
+  - enabled: 0
+    path: Assets/Scenes/GameTrails.unity
+    guid: 60e8d4915bd650142a1d460152f6d565
+  - enabled: 0
+    path: Assets/Scenes/MeteorShower.unity
+    guid: eec4b515ce86847459076696ccf19f43
+  - enabled: 0
+    path: Assets/Scenes/Rock Dating.unity
+    guid: af845fc0e0deec84f96c2f364fbab02e
+  - enabled: 0
+    path: Assets/Scenes/StoneFish.unity
+    guid: bf5949f287b485442977db2937429442
+  - enabled: 0
+    path: Assets/Scenes/Wild Fire.unity
+    guid: 45e95078a4f22ff4989890dc0a8d9a1e
+  - enabled: 0
     path: Assets/Scenes/CaveManAbduct.unity
     guid: d02d582a277791340b7adb435837552e
   - enabled: 0
