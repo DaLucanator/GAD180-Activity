@@ -2007,6 +2007,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!4 &1010231778
 Transform:
   m_ObjectHideFlags: 0
@@ -2021,6 +2022,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> MicroGames-Luc
 --- !u!1 &1153471149
 GameObject:
   m_ObjectHideFlags: 0
