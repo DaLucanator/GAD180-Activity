@@ -13,6 +13,20 @@ public class MeteorControllerScript : MonoBehaviour
     public Text GameOverText;
     public Text GameWinText;
     public Button NextLevelBtn;
+    public GameObject howToWindow;
+
+    public void Awake()
+    {
+        Time.timeScale = 0;
+        howToWindow.SetActive(true);
+    }
+
+    public void HowToOk()
+    {
+        howToWindow.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

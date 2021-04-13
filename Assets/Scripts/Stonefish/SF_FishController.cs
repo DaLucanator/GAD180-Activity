@@ -15,6 +15,7 @@ public class SF_FishController : MonoBehaviour
         if (other.tag == "Dino")
         {
             levelManagement.fishHit += 1;
+            Destroy(other.gameObject);
             Debug.Log("Hit Fish");
         }
     }

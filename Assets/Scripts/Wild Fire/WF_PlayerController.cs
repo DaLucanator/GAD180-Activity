@@ -9,6 +9,19 @@ public class WF_PlayerController : MonoBehaviour
     public Text GameOverText;
     public Text GameWinText;
     public Button NextLevelBtn;
+    public GameObject howToWindow;
+
+    public void Awake()
+    {
+        Time.timeScale = 0;
+        howToWindow.SetActive(true);
+    }
+
+    public void HowToOk()
+    {
+        howToWindow.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
 
     float _spdForce = 100f;
     float _trqForce = -200f;
