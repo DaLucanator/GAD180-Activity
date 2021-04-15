@@ -16,6 +16,7 @@ public class SF_PlayerControls : MonoBehaviour
     public GameObject rock;
     public GameObject spawnpoint;
     public GameObject howToWindow;
+    public int numOfFishes = 3;
 
     public void Awake()
     {

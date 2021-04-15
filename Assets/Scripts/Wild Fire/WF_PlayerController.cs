@@ -11,8 +11,11 @@ public class WF_PlayerController : MonoBehaviour
     public Button NextLevelBtn;
     public GameObject howToWindow;
     public bool wonGame = false;
+    public SpriteRenderer playerSprite;
     public void Awake()
     {
+        playerSprite = this.GetComponent < SpriteRenderer >();
+        playerSprite.enabled = false;
         Time.timeScale = 0;
         howToWindow.SetActive(true);
     }
@@ -20,6 +23,7 @@ public class WF_PlayerController : MonoBehaviour
     public void HowToOk()
     {
         howToWindow.gameObject.SetActive(false);
+        playerSprite.enabled = true;
         Time.timeScale = 1;
     }
 
@@ -62,6 +66,11 @@ public class WF_PlayerController : MonoBehaviour
 
         _rb.angularVelocity = Input.GetAxis("Horizontal") * _trqForceAdjuster;
 
+        if(Input.GetKey(KeyCode.Z))
+        {
+            _rb.velocity = new Vector2(0f, 0f);
+            Time.timeScale = 5;
+        }
 
     }
 

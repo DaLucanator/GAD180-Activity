@@ -158,6 +158,7 @@ MonoBehaviour:
   GameWinText: {fileID: 705733523}
   NextLevelBtn: {fileID: 1347194201}
   HowToContainer: {fileID: 2112189657}
+  player: {fileID: 836530629}
   wonGame: 0
 --- !u!61 &24283525
 BoxCollider2D:
@@ -2247,10 +2248,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Use "A" & "D" keys to switch sides.
+  m_Text: 'The Cave Collapsed
 
-    Avoid the Branches and get your
-    Breakfast.'
+    Move with WASD Key
+
+    Push Heavy Rocks To Get
+    Outside'
 --- !u!222 &387863146
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5061,7 +5064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFacingRight: 1
-  moveSpeed: 100
+  moveSpeed: 150
 --- !u!61 &836530632
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,8 +15,13 @@ public class SF_FishController : MonoBehaviour
         if (other.tag == "Dino")
         {
             levelManagement.fishHit += 1;
+            levelManagement.numOfFishes -= 1;
             Destroy(other.gameObject);
             Debug.Log("Hit Fish");
+        }
+        if(levelManagement.numOfFishes <= 0)
+        {
+            levelManagement.GameWin();
         }
     }
     // Update is called once per frame

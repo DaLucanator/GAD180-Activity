@@ -17,6 +17,7 @@ public class GT_WorldAnimator : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
+        worldCanvas.SetActive(false);
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
         wonGame = false;
@@ -44,6 +45,7 @@ public class GT_WorldAnimator : MonoBehaviour
     //Game variables
     public GameObject player;
     public GameObject[] cows;
+    public GameObject worldCanvas;
     private Animator animator;
     public GameObject howToWindow;
 
@@ -68,6 +70,7 @@ public class GT_WorldAnimator : MonoBehaviour
     {
         player.SetActive(true);
     }
+
 
     void DeActivateCows()
     {
