@@ -44,7 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CaveManRaceCar.unity
     guid: f377823672a6ab44a8b735901ebddd9a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CaveManSling.unity
     guid: e6208a8ba959bb34cad492d243b5e3a6
   m_configObjects: {}
