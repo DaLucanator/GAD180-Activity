@@ -7,18 +7,21 @@ public class UggHexTimer : MonoBehaviour
 
      float TmStart;
      float TmLen=10f;
- 
-     // Use this for initialization
-     void Start () {
-         TmStart=Time.time;
-     }
+
+    // Use this for initialization
+    void Start()
+    {
+        TmStart = Time.time;
+    }
      
      // Update is called once per frame
-     void Update () {
-         if(Time.time>TmStart + TmLen) 
+     void Update () 
+    {
+         if(Time.time > TmStart + TmLen) 
          {
- 
-             Debug.Log("You Win");
+
+            //Debug.Log("You Win");
+            UggHexManager.timerWin = true;
          }
      }
 }

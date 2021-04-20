@@ -9,7 +9,9 @@ public class RespawnPlatformer : MonoBehaviour
     public Text GameOverText;
     public Button NextLevelBtn;
     public Vector2 SpawnPoint;
+  
 
+ 
 
     void OnTriggerEnter2D (Collider2D collision)
      {
@@ -24,7 +26,6 @@ public class RespawnPlatformer : MonoBehaviour
     {
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
-        GetComponent<Rigidbody2D>().gravityScale = 0;
         Time.timeScale = 0;
     }
 }

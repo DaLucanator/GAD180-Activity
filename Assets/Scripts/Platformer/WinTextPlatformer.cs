@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class WinText : MonoBehaviour
+public class WinTextPlatformer : MonoBehaviour
 {
     public Text GameWinText;
     public Button NextLevelBtn;
@@ -12,14 +12,14 @@ public class WinText : MonoBehaviour
 
     public bool wonGame = false;
 
-    void OnTriggerEnter2D (Collider2D col)
-     {
-         if     (col.tag == "Player")
-         {
-             //print("You Win");
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+        {
+            //print("You Win");
             GameWin();
-         }
-     }
+        }
+    }
 
     private void Awake()
     {
