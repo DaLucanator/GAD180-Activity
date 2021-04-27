@@ -1,46 +1,46 @@
 fileFormatVersion: 2
-guid: 4596dfd137064c34ab4885874c1f1062
+guid: cbef0f6a9330cea49bde529e1e6510d9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8106798942686717786
-    second: water_00_strip13_0
+      213: 2815145872851390027
+    second: water_00_strip13 - Copy_0
   - first:
-      213: -4584351882680699815
-    second: water_00_strip13_1
+      213: -1421281563890825389
+    second: water_00_strip13 - Copy_1
   - first:
-      213: 1734312104392927542
-    second: water_00_strip13_2
+      213: 9164784852982862447
+    second: water_00_strip13 - Copy_2
   - first:
-      213: -7812712743882343499
-    second: water_00_strip13_3
+      213: -4572696228784417449
+    second: water_00_strip13 - Copy_3
   - first:
-      213: 63462448534937026
-    second: water_00_strip13_4
+      213: -4878708303569494787
+    second: water_00_strip13 - Copy_4
   - first:
-      213: -1019692282204822059
-    second: water_00_strip13_5
+      213: -7831066660380768550
+    second: water_00_strip13 - Copy_5
   - first:
-      213: 5616683578736665192
-    second: water_00_strip13_6
+      213: 3707924030846137656
+    second: water_00_strip13 - Copy_6
   - first:
-      213: -3432685039655066976
-    second: water_00_strip13_7
+      213: 314758522044823699
+    second: water_00_strip13 - Copy_7
   - first:
-      213: -8579945388374474398
-    second: water_00_strip13_8
+      213: 9019602551269144367
+    second: water_00_strip13 - Copy_8
   - first:
-      213: -3158756860945340959
-    second: water_00_strip13_9
+      213: 7954837779997510236
+    second: water_00_strip13 - Copy_9
   - first:
-      213: 2542853009981802615
-    second: water_00_strip13_10
+      213: -3915246885524523642
+    second: water_00_strip13 - Copy_10
   - first:
-      213: -8420511924717834595
-    second: water_00_strip13_11
+      213: 845761352854105963
+    second: water_00_strip13 - Copy_11
   - first:
-      213: 2652042968520249938
-    second: water_00_strip13_12
+      213: -3528132258667208852
+    second: water_00_strip13 - Copy_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,274 +130,274 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: water_00_strip13_0
+      name: water_00_strip13 - Copy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a57aa5ccfa2218070800000000000000
-      internalID: 8106798942686717786
+      spriteID: b4ec63e8148611720800000000000000
+      internalID: 2815145872851390027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_1
+      name: water_00_strip13 - Copy_1
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9547c6b604c1160c0800000000000000
-      internalID: -4584351882680699815
+      spriteID: 357c97aa2f7964ce0800000000000000
+      internalID: -1421281563890825389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_2
+      name: water_00_strip13 - Copy_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63920009ba3811810800000000000000
-      internalID: 1734312104392927542
+      spriteID: f629ce4444bdf2f70800000000000000
+      internalID: 9164784852982862447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_3
+      name: water_00_strip13 - Copy_3
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bbb9b8272ba39390800000000000000
-      internalID: -7812712743882343499
+      spriteID: 7555981d1058a80c0800000000000000
+      internalID: -4572696228784417449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_4
+      name: water_00_strip13 - Copy_4
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cd508db2c671e000800000000000000
-      internalID: 63462448534937026
+      spriteID: dfcddfa75a85b4cb0800000000000000
+      internalID: -4878708303569494787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_5
+      name: water_00_strip13 - Copy_5
       rect:
         serializedVersion: 2
         x: 80
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d569fa954359d1f0800000000000000
-      internalID: -1019692282204822059
+      spriteID: ad68997fc56725390800000000000000
+      internalID: -7831066660380768550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_6
+      name: water_00_strip13 - Copy_6
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8626e56d4f772fd40800000000000000
-      internalID: 5616683578736665192
+      spriteID: 835f7b8b241357330800000000000000
+      internalID: 3707924030846137656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_7
+      name: water_00_strip13 - Copy_7
       rect:
         serializedVersion: 2
         x: 112
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a2ef81c427ac50d0800000000000000
-      internalID: -3432685039655066976
+      spriteID: 3983288453f3e5400800000000000000
+      internalID: 314758522044823699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_8
+      name: water_00_strip13 - Copy_8
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26140b5b029ede880800000000000000
-      internalID: -8579945388374474398
+      spriteID: f27ba938bb01c2d70800000000000000
+      internalID: 9019602551269144367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_9
+      name: water_00_strip13 - Copy_9
       rect:
         serializedVersion: 2
         x: 144
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e5668bee57d924d0800000000000000
-      internalID: -3158756860945340959
+      spriteID: c5acb9a70d2456e60800000000000000
+      internalID: 7954837779997510236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_10
+      name: water_00_strip13 - Copy_10
       rect:
         serializedVersion: 2
         x: 160
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7788ff707570a4320800000000000000
-      internalID: 2542853009981802615
+      spriteID: 6853b5493bf3aa9c0800000000000000
+      internalID: -3915246885524523642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_11
+      name: water_00_strip13 - Copy_11
       rect:
         serializedVersion: 2
         x: 176
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9ea04ca405542b80800000000000000
-      internalID: -8420511924717834595
+      spriteID: b6f6f99287fbcbb00800000000000000
+      internalID: 845761352854105963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_00_strip13_12
+      name: water_00_strip13 - Copy_12
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 252d8bb5703fdc420800000000000000
-      internalID: 2652042968520249938
+      spriteID: c6f5b81576e890fc0800000000000000
+      internalID: -3528132258667208852
       vertices: []
       indices: 
       edges: []
