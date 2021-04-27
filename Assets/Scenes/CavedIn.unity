@@ -1400,12 +1400,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The Cave Collapsed
+  m_Text: 'There is Mail Blocking the Exit
 
     Move with WASD Key
 
-    Push Heavy Rocks To Get
-    Outside'
+    Carefully
+    move packages to clear the way.'
 --- !u!222 &387863146
 CanvasRenderer:
   m_ObjectHideFlags: 0
