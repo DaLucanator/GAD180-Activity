@@ -25,6 +25,7 @@ public class GT_WorldAnimator : MonoBehaviour
     public void GameWin()
     {
         Time.timeScale = 0;
+        worldCanvas.SetActive(false);
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
         wonGame = true;
