@@ -54,10 +54,12 @@ public class GT_WorldAnimator : MonoBehaviour
     {
         Time.timeScale = 0;
         howToWindow.SetActive(true);
+        worldCanvas.SetActive(false);
     }
 
     public void HowToOk()
     {
+        worldCanvas.SetActive(true);
         howToWindow.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
