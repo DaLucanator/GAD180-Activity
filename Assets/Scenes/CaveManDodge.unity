@@ -880,6 +880,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7dbc0ca83b9484b9ae1269d2cd8172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 15
+  mapWidth: 7.5
+  HowToContainer: {fileID: 745582703}
 --- !u!60 &968307877
 PolygonCollider2D:
   m_ObjectHideFlags: 0

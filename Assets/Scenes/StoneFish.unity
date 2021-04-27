@@ -1588,6 +1588,7 @@ MonoBehaviour:
   rock: {fileID: 4391730510404719988, guid: 7da8d98e4a8304243bb895147c007f88, type: 3}
   spawnpoint: {fileID: 1624503473}
   howToWindow: {fileID: 1777855185}
+  fishes: {fileID: 596190799}
   numOfFishes: 3
 --- !u!1 &705733521
 GameObject:
