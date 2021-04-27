@@ -38,6 +38,7 @@ public class GT_WorldAnimator : MonoBehaviour
             CaveLife_GameEvents._playerScore += 1;
             wonGame = false;
         }
+        else { wonGame = false; }
         CaveLife_LevelController.OnLevelComplete(1);
     }
     #endregion
