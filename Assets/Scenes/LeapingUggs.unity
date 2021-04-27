@@ -191,8 +191,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -344659275
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d94fbb10e4fde0a43ab7bf5b20aeb625, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -969,7 +969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 865191372}
   - component: {fileID: 865191371}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1013,8 +1013,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -382363615
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 26d0b97648b43834dabfb480ea2e1328, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1147,7 +1147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181489640}
   - component: {fileID: 1181489639}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: grass2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,8 +1191,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -382363615
+  m_SortingLayer: -1
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 711933dce72a0dd45bbba89b89ea9fee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
