@@ -16,6 +16,7 @@ public class SF_PlayerControls : MonoBehaviour
     public GameObject rock;
     public GameObject spawnpoint;
     public GameObject howToWindow;
+    public GameObject fishes;
     public int numOfFishes = 3;
 
     public void Awake()
@@ -71,6 +72,7 @@ public class SF_PlayerControls : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
+        fishes.SetActive(false);
         GameOverText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
         wonGame = false;
@@ -78,6 +80,7 @@ public class SF_PlayerControls : MonoBehaviour
     public void GameWin()
     {
         Time.timeScale = 0;
+        fishes.SetActive(false);
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
         wonGame = true;

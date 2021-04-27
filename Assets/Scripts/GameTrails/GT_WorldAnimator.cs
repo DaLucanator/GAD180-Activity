@@ -25,6 +25,7 @@ public class GT_WorldAnimator : MonoBehaviour
     public void GameWin()
     {
         Time.timeScale = 0;
+        worldCanvas.SetActive(false);
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
         wonGame = true;
@@ -54,10 +55,12 @@ public class GT_WorldAnimator : MonoBehaviour
     {
         Time.timeScale = 0;
         howToWindow.SetActive(true);
+        worldCanvas.SetActive(false);
     }
 
     public void HowToOk()
     {
+        worldCanvas.SetActive(true);
         howToWindow.gameObject.SetActive(false);
         Time.timeScale = 1;
     }

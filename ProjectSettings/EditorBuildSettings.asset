@@ -8,27 +8,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 92d02066f25484041acc86bf8c70fa16
-  - enabled: 0
-    path: Assets/Scenes/BreakfastUIVersion.unity
-    guid: f84e785ae22a0364884db330a62228f9
-  - enabled: 0
-    path: Assets/Scenes/CavedIn.unity
-    guid: 45149a49390f16d4f8453543d5baf942
-  - enabled: 0
-    path: Assets/Scenes/GameTrails.unity
-    guid: 60e8d4915bd650142a1d460152f6d565
-  - enabled: 0
-    path: Assets/Scenes/MeteorShower.unity
-    guid: eec4b515ce86847459076696ccf19f43
-  - enabled: 0
-    path: Assets/Scenes/Rock Dating.unity
-    guid: af845fc0e0deec84f96c2f364fbab02e
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Wild Fire.unity
+    guid: 45e95078a4f22ff4989890dc0a8d9a1e
+  - enabled: 1
     path: Assets/Scenes/StoneFish.unity
     guid: bf5949f287b485442977db2937429442
   - enabled: 0
-    path: Assets/Scenes/Wild Fire.unity
-    guid: 45e95078a4f22ff4989890dc0a8d9a1e
+    path: Assets/Scenes/UggHex.unity
+    guid: b41e552b3c1a74b4d8bc07eff611975c
+  - enabled: 1
+    path: Assets/Scenes/Rock Dating.unity
+    guid: af845fc0e0deec84f96c2f364fbab02e
+  - enabled: 1
+    path: Assets/Scenes/BreakfastUIVersion.unity
+    guid: f84e785ae22a0364884db330a62228f9
+  - enabled: 1
+    path: Assets/Scenes/CavedIn.unity
+    guid: 45149a49390f16d4f8453543d5baf942
   - enabled: 0
     path: Assets/Scenes/CaveManAbduct.unity
     guid: d02d582a277791340b7adb435837552e
@@ -50,13 +47,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FlappyUgg.unity
     guid: 4782bd980652e3e4fbf3c22807652865
+  - enabled: 1
+    path: Assets/Scenes/GameTrails.unity
+    guid: 60e8d4915bd650142a1d460152f6d565
+  - enabled: 0
+    path: Assets/Scenes/LeapingUggs.unity
+    guid: 637b512a7d6095a45b2e3998a85508b1
+  - enabled: 1
+    path: Assets/Scenes/MeteorShower.unity
+    guid: eec4b515ce86847459076696ccf19f43
   - enabled: 0
     path: Assets/Scenes/Platformer.unity
     guid: 437545d724e8ec9428cae2077ea5f191
-  - enabled: 1
-    path: Assets/Scenes/UggHex.unity
-    guid: b41e552b3c1a74b4d8bc07eff611975c
-  - enabled: 1
-    path: Assets/Scenes/LeapingUggs.unity
-    guid: 637b512a7d6095a45b2e3998a85508b1
   m_configObjects: {}
