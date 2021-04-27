@@ -13,6 +13,9 @@ TagManager:
   - Dino
   - FirstStop
   - ground
+  - Dinosaur
+  - Paddle
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -48,7 +51,7 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-    uniqueID: 342737125
+    uniqueID: 3912603681
     locked: 0
   - name: Default
     uniqueID: 0

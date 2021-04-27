@@ -8,6 +8,9 @@ public class WinText : MonoBehaviour
 {
     public Text GameWinText;
     public Button NextLevelBtn;
+    public GameObject HowToContainer;
+
+    public bool wonGame = false;
 
     void OnTriggerEnter2D (Collider2D col)
      {
@@ -18,15 +21,44 @@ public class WinText : MonoBehaviour
          }
      }
 
+    private void Awake()
+    {
+        Time.timeScale = 0;
+        HowToContainer.gameObject.SetActive(true);
+    }
+
+    public void HowToOk()
+    {
+        HowToContainer.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    /*
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        GameOverText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        wonGame = false;
+    }
+    */
+
     public void GameWin()
     {
         GameWinText.gameObject.SetActive(true);
         NextLevelBtn.gameObject.SetActive(true);
+        wonGame = true;
         Time.timeScale = 0;
     }
     public void NextLevel()
     {
-        CaveLife_LevelController.OnLevelComplete(1);
         Time.timeScale = 1;
+
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
+        CaveLife_LevelController.OnLevelComplete(1);
     }
 }
