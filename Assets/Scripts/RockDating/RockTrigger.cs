@@ -1,15 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
 
 public class RockTrigger : MonoBehaviour
 {
-    public UnityEvent Failed;
-    public UnityEvent Passed;
-    public bool failed;
-    public Animator explosionAnim;
-    public Animator pileAnim;
+
+    public Text GameOverText;
+    public Text GameWinText;
+    public Button NextLevelBtn;
+    public GameObject howToWindow;
+    public bool wonGame;
+
+    public void Awake()
+    {
+        Time.timeScale = 0;
+        howToWindow.SetActive(true);
+    }
+
+    public void HowToOk()
+    {
+        howToWindow.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,34 +34,39 @@ public class RockTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.tag == "Fail")
+        if (other.tag == "GameOver")
         {
-            failed = true;
-            StartCoroutine("Delay");
+            GameOver();
         }
-        else if (other.tag == "Pass")
+        else if (other.tag == "GameWin")
         {
-            failed = false;
-            StartCoroutine("Delay");
+            GameWin();
         }
     }
-    IEnumerator Delay()
+    public void GameOver()
     {
-        yield return new WaitForSeconds(2);
-        if(failed == true)
-        {
-            Failed.Invoke();
-        }
-        else if (failed == false)
-        {
-            Passed.Invoke();
-        }
-
-        yield return null;
+        Time.timeScale = 0;
+        GameOverText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        wonGame = false;
     }
-    // Update is called once per frame
-    void Update()
+    public void GameWin()
+    {
+        Time.timeScale = 0;
+        GameWinText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        wonGame = true;
+    }
+    public void NextLevel()
     {
         
+        Time.timeScale = 1;
+
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
+        CaveLife_LevelController.OnLevelComplete(1);
     }
 }

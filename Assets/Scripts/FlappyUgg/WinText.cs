@@ -1,26 +1,64 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WinText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Text GameWinText;
+    public Button NextLevelBtn;
+    public GameObject HowToContainer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool wonGame = false;
 
     void OnTriggerEnter2D (Collider2D col)
      {
          if     (col.tag == "Player")
          {
-             print("You Win");
+             //print("You Win");
+            GameWin();
          }
      }
+
+    private void Awake()
+    {
+        Time.timeScale = 0;
+        HowToContainer.gameObject.SetActive(true);
+    }
+
+    public void HowToOk()
+    {
+        HowToContainer.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    /*
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        GameOverText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        wonGame = false;
+    }
+    */
+
+    public void GameWin()
+    {
+        GameWinText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+        wonGame = true;
+        Time.timeScale = 0;
+    }
+    public void NextLevel()
+    {
+        Time.timeScale = 1;
+
+        if (wonGame)
+        {
+            CaveLife_GameEvents._playerScore += 1;
+            wonGame = false;
+        }
+        CaveLife_LevelController.OnLevelComplete(1);
+    }
 }

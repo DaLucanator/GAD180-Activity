@@ -4,6 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Branch
+  - GameWin
+  - Environment
+  - SecondStop
+  - Bush
+  - ThirdStop
+  - Dino
+  - FirstStop
   - ground
   - Dinosaur
   - Paddle

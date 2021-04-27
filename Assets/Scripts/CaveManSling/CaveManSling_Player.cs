@@ -1,29 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CaveManSling_Player : MonoBehaviour
 {
-    //Start Variables
+    [SerializeField] private float _launchPower = 300;
+    [SerializeField] public int currentLives = 3;
 
+    public Text GameOverText;
+    public Button NextLevelBtn;
     private Vector3 _startPos;
+
     private bool _headLaunched;
     private float _idle;
 
-    [SerializeField] private float _launchPower = 300;
-
-    //End Variables
+    public GameObject HowToContainer;
 
     void Awake()
     {
-        //get start pos
+        Time.timeScale = 1;
         _startPos = transform.position;
+        HowToContainer.gameObject.SetActive(true);
     }
 
     private void Update()
     {
-        //Set Line to go from head to start position
         GetComponent<LineRenderer>().SetPosition(0, transform.position);
         GetComponent<LineRenderer>().SetPosition(1, _startPos);
 
@@ -31,39 +32,43 @@ public class CaveManSling_Player : MonoBehaviour
         {
             _idle += Time.deltaTime;
         }
-
-        //reset bird position if flys too far.
         if(transform.position.y > 10 ||
             transform.position.y < -10 ||
             transform.position.x > 10 ||
             transform.position.x < -10 ||
             _idle > 2)
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
+            currentLives -= 1;
+            if (currentLives <= 0)
+            {
+            GameOver();
+            }
+            else
+            {
+                int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(sceneIndex);
+            }
         }
+    }
+    public void HowToOk()
+    {
+        HowToContainer.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void OnMouseDown()
     {
-        //mouse click and hold highlights head in red
         GetComponent<SpriteRenderer>().color = Color.red;
         GetComponent<LineRenderer>().enabled = true;
     }
 
     private void OnMouseUp()
     {
-        //mouse release returns head colour back to default, white.
         GetComponent<SpriteRenderer>().color = Color.white;
-
-
-        //Add force to fire head. Direction is from current mouse pos to star pos.
-        //Force Multiplier variable _launchPower, gravity scale 1.
         Vector2 directionToInitialPosition = _startPos - transform.position;
         GetComponent<Rigidbody2D>().AddForce(directionToInitialPosition * _launchPower);
         GetComponent<Rigidbody2D>().gravityScale = 1;
         _headLaunched = true;
-
         GetComponent<LineRenderer>().enabled = false;
     }
 
@@ -73,6 +78,9 @@ public class CaveManSling_Player : MonoBehaviour
         transform.position = new Vector3(newPosition.x, newPosition.y);
     }
 
-
-
+    public void GameOver()
+    {
+        GameOverText.gameObject.SetActive(true);
+        NextLevelBtn.gameObject.SetActive(true);
+    }
 }

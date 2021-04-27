@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class CaveManDodge_Player : MonoBehaviour
 {
-
     public float speed = 15f;
     public float mapWidth = 7.5f;
 
     private Rigidbody2D rb;
+
+    public GameObject HowToContainer;
+
+    private void Awake()
+    {
+        Time.timeScale = 0;
+        HowToContainer.gameObject.SetActive(true);
+    }
 
     private void Start()
     {
@@ -20,17 +27,18 @@ public class CaveManDodge_Player : MonoBehaviour
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
 
         Vector2 newPosition = rb.position + Vector2.right * x;
-
         newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
 
-
         rb.MovePosition(newPosition);
-
+    }
+    public void HowToOk()
+    {
+        HowToContainer.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void OnCollisionEnter2D()
     {
-        FindObjectOfType<GameManager>().EndGame();
+        FindObjectOfType<CaveManDodgeGameManager>().EndGame();
     }
-
 }

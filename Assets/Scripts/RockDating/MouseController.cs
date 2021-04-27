@@ -20,23 +20,23 @@ public class MouseController : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (this.name == "Position1")
+        if (this.name == "Position (1)")
         {
             rockAnimator.SetBool("pos1", true);
         }
-        else if (this.name == "Position2")
+        else if (this.name == "Position (2)")
         {
             rockAnimator.SetBool("pos2", true);
         }
-        else if (this.name == "Position3")
+        else if (this.name == "Position (3)")
         {
             rockAnimator.SetBool("pos3", true);
         }
-        else if (this.name == "Position4")
+        else if (this.name == "Position (4)")
         {
             rockAnimator.SetBool("pos4", true);
         }
-        else if (this.name == "Position5")
+        else if (this.name == "Position (5)")
         {
             rockAnimator.SetBool("pos5", true);
         }

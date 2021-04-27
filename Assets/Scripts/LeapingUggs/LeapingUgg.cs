@@ -28,6 +28,7 @@ public class LeapingUgg : MonoBehaviour
         {
              Debug.Log("You Lose");
              Destroy(gameObject);
+            LeapingUgg_Manager.gameLose = true;
         }
 
     }
