@@ -150,7 +150,7 @@ public class HighScoreTable : MonoBehaviour
         entryTransform.Find("PosText").GetComponent<Text>().text = rankString;
 
         int score = highscoreEntry.score;
-        entryTransform.Find("ScoreText").GetComponent<Text>().text = "" + score + "/20";
+        entryTransform.Find("ScoreText").GetComponent<Text>().text = "" + score + "/17";
 
         string name = highscoreEntry.name;
         entryTransform.Find("NameText").GetComponent<Text>().text = name;
